@@ -97,11 +97,9 @@
   .path-row{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:28px;align-items:baseline;padding:22px 0;border-top:1px solid var(--line)}
   .path-row h3{font-family:Unbounded,sans-serif;font-weight:500;font-size:clamp(22px,2vw,28px);letter-spacing:-.03em;line-height:1.15}
   .path-row p{font-size:18px;line-height:1.45;color:var(--muted);max-width:34em}
-  .under{margin-top:8px}
-  .under article{background:var(--plum);border-radius:28px;padding:26px 24px}
-  .under .kicker{margin-bottom:12px}
-  .under ul{margin:0;padding-left:1.1em;display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
-  .under li{margin-top:8px;font-size:16px;line-height:1.45;color:var(--muted)}
+  .forwhom{margin-top:28px;max-width:40em}
+  .forwhom p{font-size:20px;line-height:1.45;font-weight:600}
+  .forwhom p + p{margin-top:14px;color:var(--muted);font-weight:500}
   .phrase{color:var(--mark);font-weight:800;font-size:18px;margin-bottom:8px}
   .flow-bot h3{font-family:Unbounded,sans-serif;font-weight:500;font-size:clamp(32px,3vw,46px);line-height:1.08;letter-spacing:-.04em;max-width:12em}
   .flow-bot .side p{font-size:17px;line-height:1.45;color:var(--muted);max-width:28em}
@@ -118,7 +116,7 @@
   .reveal.in{opacity:1;transform:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
   @media(max-width:980px){
     h1{white-space:normal;font-size:clamp(48px,12vw,72px)}
-    .hero,.days,.also-row,.flow-top,.film,.flow-bot,.path-row,.under ul{grid-template-columns:1fr}
+    .hero,.days,.also-row,.flow-top,.film,.flow-bot,.path-row{grid-template-columns:1fr}
     .hero-left{padding:36px 20px}
     .hero-right{min-height:70svh}
     .band,.prog,.also,.flow,.film{padding-left:20px;padding-right:20px}
@@ -275,15 +273,10 @@
           <p>Новый выбор остаётся с вами, и вы не срываетесь в старый сценарий.</p>
         </div>
       </div>
-      <div class="under">
-          <p class="kicker">Это для вас, если</p>
-          <ul>
-            <li>Вы понимаете, а делаете по-старому.</li>
-            <li>Вы не можете решить без чужого «да».</li>
-            <li>Одни и те же отношения, только имена разные.</li>
-            <li>Вы сказали «нет», а потом три дня оправдываетесь.</li>
-            <li>Вы устали себя чинить.</li>
-          </ul>
+      <div class="forwhom reveal">
+        <p>Вы понимаете, а делаете по-старому, потому что без чужого «да» решение не принимается.</p>
+        <p>Имена в отношениях меняются, а история остаётся той же, и после своего «нет» вы ещё три дня оправдываетесь.</p>
+        <p>Вы устали себя чинить.</p>
       </div>
       <div class="flow-bot">
         <div class="reveal">
