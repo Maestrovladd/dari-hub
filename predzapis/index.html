@@ -39,8 +39,9 @@
   .hero-mech{margin:0 0 14px}
   .hero-mech span{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-size:16px;font-weight:700}
   .hero-how{margin:0 0 28px;max-width:46ch;font-size:16px;line-height:1.5;color:rgba(255,255,255,.55)}
-  .hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .hero-gift{margin:0;width:min(420px,100%);padding:12px 16px;background:color-mix(in oklab, var(--g) 28%, #1a1a1a);border:1px solid color-mix(in oklab, var(--g) 50%, transparent);border-radius:16px;color:rgba(255,255,255,.88);font-size:14px;line-height:1.4}
+  .hero-cta{display:flex;align-items:flex-start;gap:28px;flex-wrap:wrap}
+  .hero-gift{display:flex;gap:8px;margin:6px 0 0;max-width:240px;padding:0;background:none;border:0;color:rgba(255,255,255,.72);font-size:13px;line-height:1.4}
+  .hero-gift svg{flex:none;width:28px;height:22px;margin-top:2px;color:#C9A6E8}
   .hero-right{position:relative;overflow:hidden;background:var(--g-dark)}
   .hero-right::before{content:"";position:absolute;inset:0 auto 0 0;width:140px;background:linear-gradient(to right, var(--ink), transparent);z-index:2}
   .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
@@ -150,7 +151,7 @@
         <p class="hero-pain">Я не учу, как правильно жить, и не спасаю, а возвращаю контакт с собой, чтобы вы сами выбрали свою жизнь и выдержали этот выбор.</p>
         <div class="hero-cta">
           <button class="btn" type="button" data-open>Занять место</button>
-          <p class="hero-gift">Займите место в предзаписи и получите доступ к эфиру, где я расскажу, как перестать ждать, что вас выберут, и начать жить в удовольствие.</p>
+          <p class="hero-gift"><svg viewBox="0 0 36 28" fill="none" aria-hidden="true"><path d="M34 4c-8 2-14 8-16 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 16l4 8 8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Займите место в предзаписи и получите доступ к эфиру, где я расскажу, как перестать ждать, что вас выберут, и начать жить в удовольствие.</span></p>
         </div>
       </div>
       <a class="scroll-cue" href="#get">
