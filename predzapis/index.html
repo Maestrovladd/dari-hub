@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Предзапись · Союз с собой</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:only light;
+    --ink:#1A1916;--muted:#5C574E;--line:#E6E0D4;
+    --paper:#F7F4EE;--white:#fff;
+    --night:#141414;--yellow:#F3FF4A;--yellow-ink:#141414;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Golos Text",ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.45;-webkit-font-smoothing:antialiased}
+  h1,h2,.offer,.hero-quote,.day h3,.school h2{font-family:Unbounded,sans-serif}
+  h1,h2,h3,p,li,.btn{text-wrap:pretty}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:14px 28px;background:var(--ink);color:#fff;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:-.01em;box-shadow:0 16px 30px -16px rgba(26,25,22,.7);transition:transform .15s,background .2s}
+  .btn:hover{transform:translateY(-2px);background:#000}
+  .btn:focus-visible,.modal-x:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+  .hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);background:var(--paper)}
+  .hero-left{display:flex;flex-direction:column;justify-content:center;padding:64px 56px 64px 7vw}
+  .eyebrow{display:inline-flex;width:max-content;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:15px;font-weight:600;margin:0 0 28px}
+  h1{font-size:clamp(46px,5.6vw,84px);font-weight:700;line-height:1.02;letter-spacing:-.04em;margin:0 0 22px}
+  h1 .line1{display:block;font-size:.58em;font-weight:600;letter-spacing:-.02em;margin-bottom:.18em}
+  .offer{margin:0 0 36px;max-width:16em;font-size:clamp(22px,2vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.25}
+  .offer em{font-style:normal;background:linear-gradient(transparent 62%, var(--yellow) 62%)}
+  .hero-actions{display:flex;align-items:flex-start;gap:16px;max-width:640px}
+  .aside{display:flex;gap:10px;min-width:0}
+  .aside svg{flex:none;width:34px;height:28px;margin-top:2px}
+  .aside p{font-size:15px;line-height:1.45;color:var(--muted);font-weight:500}
+  .aside strong{color:var(--ink);font-weight:800}
+  .hero-right{position:relative;background:var(--night);color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+  .hero-quote{margin:auto 8px 28px;max-width:12em;font-size:clamp(26px,2.6vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.2}
+  .hero-quote span{color:var(--yellow)}
+  .photo-cap{position:relative;width:min(380px,100%);padding:22px 22px 20px;background:#fff;color:var(--ink);border-radius:22px}
+  .photo-i{position:absolute;top:-14px;left:-8px;width:32px;height:32px;border-radius:50%;background:var(--yellow);color:var(--ink);font-style:italic;font-weight:800;display:grid;place-items:center;font-family:Unbounded,sans-serif}
+  .photo-cap strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em}
+  .photo-cap ul{margin:12px 0 0;padding-left:1.15em}
+  .photo-cap li{font-size:15px;line-height:1.4;margin-top:8px}
+
+  .get-head{background:#fff;text-align:center;padding:80px 6vw 8px}
+  .get-head h2{font-family:"Golos Text",sans-serif;font-weight:500;font-size:clamp(32px,4vw,52px);letter-spacing:-.04em;line-height:1.15}
+  .get-head h2 b{font-weight:800}
+  .pill{display:inline-flex;margin-top:26px;background:var(--ink);color:#fff;border-radius:999px;padding:16px 32px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.02em}
+  .learn-line{margin:40px 0 0;font-family:"Golos Text",sans-serif;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.03em}
+  .learn-line b{font-weight:800}
+  .prog{background:var(--night);color:#fff;padding:36px 6vw 64px}
+  .prog-inner{max-width:1120px;margin:0 auto}
+  .prog-kicker{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  .prog h2{font-size:clamp(28px,3.4vw,46px);font-weight:700;letter-spacing:-.04em;line-height:1.12;max-width:18em;margin-bottom:12px}
+  .prog-lead{max-width:36em;color:#d9d6cf;font-size:18px;line-height:1.45;margin-bottom:28px}
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .day{background:#1e1e1e;border-radius:18px;padding:22px 20px 18px;display:flex;flex-direction:column;min-height:100%}
+  .day-top{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px}
+  .day h3{font-size:clamp(18px,1.5vw,24px);font-weight:600;letter-spacing:-.03em;line-height:1.25;margin-bottom:16px}
+  .day ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+  .day li{font-size:15px;line-height:1.4;padding-left:14px;position:relative;color:#eee}
+  .day li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+  .itog{margin-top:auto;background:var(--yellow);color:var(--yellow-ink);border-radius:12px;padding:12px 14px}
+  .itog b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  .itog p{font-size:15px;font-weight:700;line-height:1.35}
+
+  .also{background:#fff;padding:28px 6vw 72px}
+  .also-inner{max-width:1120px;margin:0 auto}
+  .also h2{text-align:center;font-size:22px;font-weight:600;margin:8px 0 18px}
+  .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .also-row article{border:1px solid var(--line);border-radius:18px;padding:22px 18px;background:var(--paper);min-height:140px}
+  .also-row .hot{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .also-row p{font-size:17px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
+  .get-cta{display:flex;justify-content:center;margin-top:28px}
+
+  .flow{background:#0e0e0e;color:#fff;padding:72px 5vw 64px}
+  .flow-inner{max-width:1120px;margin:0 auto}
+  .flow-top{display:grid;grid-template-columns:1.05fr .9fr 1.05fr;gap:18px;align-items:stretch}
+  .flow-card{background:#1a1a1a;border-radius:28px;padding:28px 26px}
+  .flow-card h2{font-family:Unbounded,sans-serif;font-size:clamp(26px,2.4vw,36px);font-weight:700;letter-spacing:-.04em;line-height:1.15;margin-bottom:14px}
+  .flow-card p{font-size:17px;line-height:1.45;color:#eee}
+  .flow-card p + p{margin-top:16px}
+  .flow-label{margin:22px 0 12px;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{border:1px solid #3a3a3a;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
+  .flow-photo{margin:0;border-radius:28px;overflow:hidden;background:#1a1a1a;min-height:420px}
+  .flow-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .flow-kicker{color:var(--yellow);font-weight:800;margin-bottom:10px}
+  .flow-bot{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:end;margin-top:36px}
+  .flow-bot h3{font-family:Unbounded,sans-serif;font-size:clamp(26px,2.6vw,40px);font-weight:700;letter-spacing:-.04em;line-height:1.15}
+  .flow-bot p{font-size:18px;line-height:1.45}
+  .flow .get-cta{margin-top:32px}
+  .flow .btn{background:var(--yellow);color:#141414;min-width:280px;letter-spacing:.04em}
+  .flow .btn:hover{background:#fff}
+
+  footer{padding:28px 6vw 40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .modal[hidden]{display:none}
+  .modal{position:fixed;inset:0;z-index:20}
+  .dim{position:absolute;inset:0;background:rgba(20,20,20,.55)}
+  .modal-card{position:relative;z-index:1;width:min(480px,calc(100% - 32px));margin:12vh auto;background:#fff;border-radius:22px;padding:28px 24px 24px}
+  .modal-x{position:absolute;top:12px;right:14px;font-size:28px;line-height:1}
+  .modal-card h2{font-size:26px;letter-spacing:-.03em;margin-bottom:10px}
+  .modal-card p{font-size:16px;color:var(--muted);line-height:1.45}
+  @media(max-width:900px){
+    .hero,.days,.also-row,.flow-top,.flow-bot{grid-template-columns:1fr}
+    .flow-photo{min-height:360px}
+    .hero-left{padding:40px 20px 28px}
+    .hero-right{min-height:auto;padding:28px 20px}
+    .hero-quote{margin:8px 0 24px}
+    .hero-actions{flex-direction:column}
+    .get-head,.prog,.also,.flow{padding-left:20px;padding-right:20px}
+    .pill{padding:14px 18px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn{transition:none}
+    .btn:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Анкета предзаписи</p>
+      <h1><span class="line1">в Союз</span>с собой</h1>
+      <p class="offer">Как перестать выживать и <em>начать жить</em></p>
+      <div class="hero-actions">
+        <button class="btn" type="button" data-open>Занять место</button>
+        <div class="aside">
+          <svg viewBox="0 0 36 28" fill="none" aria-hidden="true">
+            <path d="M34 4c-8 2-14 8-16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M14 16l4 8 8-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Займите место в предзаписи и получите доступ к трём дням, где я покажу, <strong>как работает мир, в котором вы не пешка и живёте в удовольствие</strong>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <p class="hero-quote">Что бы ни было снаружи, <span>внутри у меня есть я.</span></p>
+      <div class="photo-cap">
+        <span class="photo-i" aria-hidden="true">i</span>
+        <strong>Дари</strong>
+        <ul>
+          <li>последние 6 лет работаю с женщинами, которые всё тащат сами</li>
+          <li>не учу. Показываю, как устроен ваш мир</li>
+          <li>спасать не буду. Дальше выбираете вы</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="get-head" id="dni">
+    <h2>В предзаписи <b>ты получишь:</b></h2>
+    <p class="pill">доступ к 3-х дневному мастер-классу и бонусному уроку</p>
+    <p class="learn-line">На мастер-классе <b>ты узнаешь:</b></p>
+  </section>
+
+  <section class="prog">
+    <div class="prog-inner">
+      <div class="days">
+        <article class="day">
+          <p class="day-top">Урок 1</p>
+          <h3>Женщина, как она есть</h3>
+          <ul>
+            <li>Женская сила не кричит и не доказывает. Она течёт</li>
+            <li>Вас научили, что сила это терпеть, а слабость стыдно</li>
+            <li>Пока себя у себя нет, вы стелитесь, чтобы вас выбрали</li>
+          </ul>
+          <div class="itog">
+            <b>Итог урока</b>
+            <p>Вы видите, где соглашаетесь на крохи и называете это любовью.</p>
+          </div>
+        </article>
+        <article class="day">
+          <p class="day-top">Урок 2</p>
+          <h3>Деньги, как хороший секс</h3>
+          <ul>
+            <li>Любовь, тело и деньги у вас про одно: согласие с собой</li>
+            <li>Нельзя исправить человека, любя его сильнее</li>
+            <li>Энергию из чужого колодца пора направить в свой</li>
+          </ul>
+          <div class="itog">
+            <b>Итог урока</b>
+            <p>Вы перестаёте быть ремонтной бригадой для чужих судеб.</p>
+          </div>
+        </article>
+        <article class="day">
+          <p class="day-top">Урок 3</p>
+          <h3>То, без чего не работает ничего</h3>
+          <ul>
+            <li>Проблема это не событие. Это ваша реакция на него</li>
+            <li>Моё или не моё. Сейчас или не сейчас</li>
+            <li>Быть большой, а не маленькой, решаете только вы</li>
+          </ul>
+          <div class="itog">
+            <b>Итог урока</b>
+            <p>Один раз выбираете себя и перестаёте себе врать.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="also">
+    <div class="also-inner">
+      <h2>А ещё с анкетой вы получаете</h2>
+      <div class="also-row">
+        <article><p>Занять место на следующий поток «Союза с собой» по эксклюзивным условиям</p></article>
+        <article><p>Гарантированно получить дополнительные бонусы и самую низкую стоимость</p></article>
+        <article class="hot"><p>Бонус-урок</p></article>
+      </div>
+      <div class="get-cta">
+        <button class="btn" type="button" data-open>Занять место в анкете</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow" id="soyuz">
+    <div class="flow-inner">
+      <div class="flow-top">
+        <article class="flow-card">
+          <h2>Союз с собой — это десять недель со мной</h2>
+          <p>Жизнь стала днём сурка. В отношениях вы отдаёте больше, чем получаете. Деньги, энергия и собственная сила утекают. Себя у себя нет.</p>
+          <p class="flow-label">Я не читаю лекции. Мы разбираем вот это</p>
+          <div class="chips">
+            <span>ваши реакции</span>
+            <span>родители</span>
+            <span>как вы себя показываете</span>
+            <span>живые разборы</span>
+          </div>
+        </article>
+        <figure class="flow-photo">
+          <img src="dari.jpg" alt="Дари" width="735" height="735">
+        </figure>
+        <article class="flow-card">
+          <p class="flow-kicker">Больше трёх тысяч женщин</p>
+          <p>В прошлый раз они уже были со мной на трёх днях. Места закончились. Кто думала «потом», просто не попала.</p>
+          <p>Анкета нужна, чтобы в этот раз вы были внутри, а не смотрели, как дверь закрылась.</p>
+        </article>
+      </div>
+      <div class="flow-bot">
+        <h3>Вас не должен никто выбирать, кроме вас самих.</h3>
+        <p>Я не учу, как правильно жить. Показываю, где вы отдаёте себя и называете это любовью. Один раз выберете себя, и дальше я вас не остановлю. Если внутри звучит «хочу по-другому», занимайте место. Я жду.</p>
+      </div>
+      <div class="get-cta">
+        <button class="btn" type="button" data-open>Занять место</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Дарья Малаховская · Союз с собой</p>
+    <p>Это учебная встреча с собой, не лечение и не обещание, что у всех выйдет одинаково.</p>
+  </footer>
+
+  <div class="modal" id="anketa" hidden>
+    <div class="dim" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anketa-title">
+      <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
+      <h2 id="anketa-title">Занять место в анкете</h2>
+      <p>Здесь будет анкета. Заполните её, и я открою вам три вечера.</p>
+    </div>
+  </div>
+  <script>
+    var modal = document.getElementById("anketa");
+    function openModal(){ modal.hidden = false; document.body.style.overflow = "hidden"; }
+    function closeModal(){ modal.hidden = true; document.body.style.overflow = ""; }
+    document.querySelectorAll("[data-open]").forEach(function(el){ el.addEventListener("click", openModal); });
+    document.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+  </script>
+</body>
+</html>
