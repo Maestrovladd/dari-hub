@@ -58,7 +58,13 @@
   .center-wrap{display:flex;justify-content:center;margin:0 0 40px}
   .get-pill{display:inline-flex;align-items:center;min-height:48px;padding:10px 28px;background:var(--g-dark);color:#fff;border-radius:999px;font-size:16px;font-weight:600}
   .learn-h{margin:0 0 24px;text-align:center;font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:-.03em}
-  .ephir{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,300px) minmax(0,1fr);gap:8px 28px;align-items:center;margin-bottom:28px}
+  .days3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px}
+  .day-card{padding:24px 22px 22px;background:#fff;border-radius:var(--r);box-shadow:0 10px 28px color-mix(in oklab, var(--g-dark) 8%, transparent)}
+  .day-card .when{margin:0 0 8px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--g-dark)}
+  .day-card h3{margin:0 0 14px;font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+  .day-card li{position:relative;margin-bottom:12px;padding-left:16px;font-size:15px;line-height:1.45}
+  .day-card li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--g)}
+  .day-card .itog{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.4}
   .ephir-list li{position:relative;margin-bottom:18px;padding-left:18px;font-size:16px;font-weight:600;line-height:1.45}
   .ephir-list li:last-child{margin-bottom:0}
   .ephir-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--g)}
@@ -106,7 +112,7 @@
     .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
     .hero-right::before{width:100%;height:80px;inset:auto 0 0;background:linear-gradient(to bottom, transparent, var(--ink))}
     .hero-left{padding:28px 20px 48px}
-    .ephir,.cards3,.stream-stage,.close-row,.prog-map{grid-template-columns:1fr}
+    .ephir,.cards3,.stream-stage,.close-row,.prog-map,.days3{grid-template-columns:1fr}
     .ephir-window{width:min(280px,100%);margin:0 auto}
     .stream-photo{min-height:0;height:70vw;max-height:420px}
     .prog-map{grid-template-columns:1fr 1fr}
@@ -157,24 +163,37 @@
       <h2 class="center">В предзаписи <em>ты получишь</em></h2>
       <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру и бесплатному уроку</span></div>
       <h3 class="learn-h">На закрытом эфире <em>ты узнаешь</em></h3>
-      <div class="ephir">
-        <ul class="ephir-list">
-          <li>Вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
-          <li>Пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
-          <li>Любовь, тело и деньги у вас про одно: вы себе это разрешаете или стыдитесь хотеть.</li>
-        </ul>
-        <div class="ephir-window">
-          <img src="dari.jpg" alt="Дари" width="800" height="1000">
-          <div class="photo-chip">
-            <b>Три дня</b>
-            <span>Закрытый эфир</span>
-          </div>
-        </div>
-        <ul class="ephir-list">
-          <li>Нельзя исправить человека, даже если любить его ещё сильнее.</li>
-          <li>Силу, которую вы тратите, чтобы его починить, пора вернуть в свою жизнь.</li>
-          <li>Жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
-        </ul>
+      <div class="days3">
+        <article class="day-card">
+          <p class="when">День 1</p>
+          <h3>Женщина, как она есть</h3>
+          <ul>
+            <li>Почему вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
+            <li>Задумайтесь, когда вы в последний раз чувствовали себя не «сильной, нужно всё вывезти и грести», а просто счастливой.</li>
+            <li>Почему, пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
+          </ul>
+          <p class="itog">Вы увидите, что дело не в том, что вас не выбирают, а в том, что дома внутри нет.</p>
+        </article>
+        <article class="day-card">
+          <p class="when">День 2</p>
+          <h3>Деньги, как хороший секс</h3>
+          <ul>
+            <li>Почему любовь, тело и деньги у вас про одно: вы себе это разрешаете или вам стыдно хотеть.</li>
+            <li>Нельзя исправить человека, даже если любить его ещё сильнее, потому что его жизнь он проживает сам.</li>
+            <li>Силу, которую вы тратите, чтобы его починить, пора вернуть в свою жизнь.</li>
+          </ul>
+          <p class="itog">Вы увидите, куда уходят ваше удовольствие и ваши деньги.</p>
+        </article>
+        <article class="day-card">
+          <p class="when">День 3</p>
+          <h3>То, без чего не работает ничего</h3>
+          <ul>
+            <li>Почему один и тот же день одну поднимает, а другую укладывает: дело в том, как вы на него отвечаете.</li>
+            <li>Вы сами решаете, ваше это или не ваше и сейчас это или не сейчас, и не отдаёте это решение другому.</li>
+            <li>Почему жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
+          </ul>
+          <p class="itog">Вы один раз выбираете себя, и дальше с этого места уже можно жить.</p>
+        </article>
       </div>
       <div class="cards3">
         <article class="card">
