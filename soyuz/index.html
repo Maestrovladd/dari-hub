@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Союз с собой · Дарья Малаховская</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1A1916;--muted:#5C574E;--line:#E6E0D4;--paper:#F7F4EE;--night:#141414;--yellow:#F3FF4A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Golos Text",sans-serif;color:var(--ink);background:#fff;line-height:1.45}
+  h1,h2,h3,.hero-quote{font-family:Unbounded,sans-serif}
+  h1,h2,h3,p,li,.btn{text-wrap:pretty}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:14px 28px;background:var(--ink);color:#fff;border-radius:999px;font-weight:700;box-shadow:0 16px 30px -16px rgba(26,25,22,.7);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .wrap{max-width:1120px;margin:0 auto}
+  .hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;background:var(--paper)}
+  .hero-left{display:flex;flex-direction:column;justify-content:center;padding:64px 48px 64px 7vw}
+  .eyebrow{width:max-content;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;margin-bottom:22px}
+  h1{font-size:clamp(34px,4.4vw,62px);line-height:1.05;letter-spacing:-.04em;margin-bottom:18px}
+  .lead{font-size:clamp(18px,1.6vw,22px);max-width:22em;margin-bottom:28px}
+  .hero-right{background:var(--night);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+  .hero-quote{font-size:clamp(26px,2.8vw,40px);line-height:1.15;letter-spacing:-.03em;max-width:12em;margin:auto 0 24px}
+  .hero-quote span{color:var(--yellow)}
+  .cap{background:#fff;color:var(--ink);border-radius:22px;padding:20px;max-width:380px}
+  .cap strong{font-size:22px}
+  .cap ul{margin:10px 0 0;padding-left:1.1em}
+  .cap li{margin-top:8px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--night);color:#fff}
+  .stats article{padding:28px 22px;border-right:1px solid #2a2a2a}
+  .stats b{display:block;font-family:Unbounded,sans-serif;font-size:clamp(28px,3vw,42px);letter-spacing:-.04em;color:var(--yellow)}
+  .stats p{margin-top:6px}
+  section{padding:72px 6vw}
+  .for h2,.path h2,.inside h2,.price h2,.who h2,.faq h2{font-size:clamp(32px,4vw,52px);letter-spacing:-.04em;line-height:1.05;margin-bottom:18px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .split article{border-radius:22px;padding:24px;border:1px solid var(--line)}
+  .split .now{background:var(--paper)}
+  .split .then{background:var(--night);color:#fff;border-color:var(--night)}
+  .split h3{margin-bottom:12px;font-size:20px}
+  .split li,.tariffs li{margin:10px 0 0 1em}
+  .inside{background:var(--paper)}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+  .cards article,.steps article{background:#fff;border-radius:18px;padding:18px;border:1px solid var(--line);min-height:160px}
+  .cards b{display:block;margin-bottom:8px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+  .steps article{background:var(--paper);min-height:200px}
+  .steps h3{margin-bottom:8px}
+  .price{background:var(--night);color:#fff}
+  .price .note{max-width:40em;color:#ddd;margin-bottom:22px}
+  .tariffs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tariffs article{background:#1c1c1c;border-radius:24px;padding:28px}
+  .tariffs .vip{outline:2px solid var(--yellow)}
+  .sum{font-family:Unbounded,sans-serif;font-size:40px;letter-spacing:-.04em;margin:8px 0 14px}
+  .tariffs .btn{margin-top:22px;background:var(--yellow);color:#141414}
+  .who{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:center;background:var(--paper)}
+  .who img{width:100%;border-radius:28px;display:block;object-fit:cover;max-height:520px}
+  .who p + p{margin-top:14px}
+  .faq details{border-top:1px solid var(--line);padding:16px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-size:18px}
+  .faq details p{margin-top:8px;max-width:42em}
+  .end{background:var(--night);color:#fff;text-align:center}
+  .end h2{font-size:clamp(32px,4vw,56px);letter-spacing:-.04em;margin-bottom:18px}
+  .end .btn{background:var(--yellow);color:#141414}
+  footer{padding:28px 6vw 40px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+  .modal[hidden]{display:none}
+  .modal{position:fixed;inset:0;z-index:20}
+  .dim{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+  .modal-card{position:relative;z-index:1;width:min(480px,calc(100% - 32px));margin:12vh auto;background:#fff;border-radius:22px;padding:28px}
+  .modal-x{position:absolute;top:10px;right:14px;font-size:28px}
+  @media(max-width:900px){
+    .hero,.split,.cards,.steps,.tariffs,.who,.stats{grid-template-columns:1fr}
+    .hero-left{padding:40px 20px}
+    .stats article{border-right:0;border-bottom:1px solid #2a2a2a}
+  }
+  @media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Союз с собой</p>
+      <h1>Можно знать о себе всё и жить против себя</h1>
+      <p class="lead">Изменение начинается не там, где вы поняли ещё больше. А там, где вы сделали другой выбор и остались с собой после него.</p>
+      <button class="btn" type="button" data-open>Занять место</button>
+    </div>
+    <div class="hero-right">
+      <p class="hero-quote">Что бы ни было снаружи, <span>внутри у меня есть я.</span></p>
+      <div class="cap">
+        <strong>Дарья Малаховская</strong>
+        <ul>
+          <li>автор метода «Точка выбора»</li>
+          <li>последние 6 лет работаю с женщинами, которые всё тащат сами</li>
+          <li>не учу, как правильно жить. Показываю, где вы себя сдаёте</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <article><b>4</b><p>сезона проекта уже были. Это не первый круг.</p></article>
+    <article><b>3 000+</b><p>женщин пришли на три дня в прошлый раз. Места тогда закончились.</p></article>
+    <article><b>10</b><p>недель живой работы со мной, не записанный курс.</p></article>
+    <article><b>2</b><p>тарифа. Оба ведут по одному пути. Отличается, насколько я близко.</p></article>
+  </div>
+
+  <section class="for">
+    <div class="wrap">
+      <h2>Это про вас, если голова уже всё поняла, а жизнь стоит</h2>
+      <div class="split">
+        <article class="now">
+          <h3>Сейчас</h3>
+          <ul>
+            <li>Жизнь стала днём сурка, хотя снаружи всё уже собрано.</li>
+            <li>В отношениях вы отдаёте больше, чем получаете.</li>
+            <li>Деньги, энергия и собственная сила утекают.</li>
+            <li>Сказали «нет» и три дня это объясняете.</li>
+            <li>Себя у себя нет. Ждёте, что вас выберут.</li>
+          </ul>
+        </article>
+        <article class="then">
+          <h3>Куда ведёт работа</h3>
+          <ul>
+            <li>Вы видите повтор раньше, чем опять живёте по нему.</li>
+            <li>Спрашиваете не «как правильно», а «как моё».</li>
+            <li>Можете любить другого и не исчезать внутри этой любви.</li>
+            <li>Всё реже ждёте чужое «да», чтобы разрешить себе жизнь.</li>
+            <li>Что бы ни было снаружи, внутри у вас есть вы.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="inside">
+    <div class="wrap">
+      <h2>Внутри не лекции. Живая работа.</h2>
+      <div class="cards">
+        <article><b>Встречи со мной</b><p>Раз в неделю в Zoom, полтора или два часа. Я веду сама.</p></article>
+        <article><b>Закрытый круг</b><p>Группа живёт в Telegram. После первой встречи рядом появляется женщина, с которой вы идёте.</p></article>
+        <article><b>Практики</b><p>Между встречами есть задания. Вы делаете их для себя. Смотрю их я.</p></article>
+        <article><b>Записи</b><p>Они остаются у вас на обоих тарифах. Живой приход всё равно дороже записи.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="path">
+    <div class="wrap">
+      <h2>Четыре шага. Каждый не про «как правильно».</h2>
+      <div class="steps">
+        <article>
+          <h3>Увидеть</h3>
+          <p>Где вы живёте не из себя. Какие решения принимаете из страха, долга и привычки.</p>
+        </article>
+        <article>
+          <h3>Выдержать</h3>
+          <p>Не убежать от правды о себе и не сделать из неё очередной повод себя разрушить.</p>
+        </article>
+        <article>
+          <h3>Выбрать</h3>
+          <p>Перестать ждать разрешения и сделать действие, которое возвращает вам авторство.</p>
+        </article>
+        <article>
+          <h3>Интегрировать</h3>
+          <p>Не сорваться в старый сценарий, а оставить новый выбор в обычной жизни.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="price" id="tarify">
+    <div class="wrap">
+      <h2>Оба тарифа — полный путь</h2>
+      <p class="note">Отличается не программа. Отличается, насколько лично я с вами в разборе. Рассрочка есть. Дату старта назову, когда она будет.</p>
+      <div class="tariffs">
+        <article>
+          <h3>Поток</h3>
+          <p class="sum">69 900 ₽</p>
+          <ul>
+            <li>10 недель</li>
+            <li>живые встречи в общем круге</li>
+            <li>закрытый чат</li>
+            <li>практики между встречами</li>
+            <li>записи остаются</li>
+          </ul>
+          <button class="btn" type="button" data-open>Занять место в Потоке</button>
+        </article>
+        <article class="vip">
+          <h3>VIP</h3>
+          <p class="sum">150 000 ₽</p>
+          <ul>
+            <li>всё, что в Потоке</li>
+            <li>меньше людей</li>
+            <li>разбор ближе ко мне</li>
+            <li>приоритет в живых разборах</li>
+          </ul>
+          <button class="btn" type="button" data-open>Занять место в VIP</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <img src="dari.jpg" alt="Дарья Малаховская" width="735" height="735">
+    <div>
+      <h2>Я не спасаю. Я показываю один раз.</h2>
+      <p>Последние шесть лет я работаю с женщинами, которые снаружи уже сильные, а себя у себя нет. Они устали чинить себя, чинить мужчину любовью и называть крохи любовью.</p>
+      <p>Точка выбора в том, что понимания мало. В какой-то момент вы видите повтор и можете выбрать иначе. Спасать не буду. Дальше выбираете вы. В конце десяти недель есть выпускная встреча.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Вопросы, на которые уже есть ответ</h2>
+      <details open>
+        <summary>Сколько это длится и где мы видимся?</summary>
+        <p>Десять недель. Встреч за это время десять или двенадцать. Я с вами раз в неделю, полтора или два часа, в Zoom. Иногда к вечеру может подключиться другой человек. Группа живёт в Telegram.</p>
+      </details>
+      <details>
+        <summary>Будут ли записи?</summary>
+        <p>Да. Они остаются у вас и на Потоке, и на VIP. Прийти самой всё равно дороже любой записи.</p>
+      </details>
+      <details>
+        <summary>Надо ли делать задания?</summary>
+        <p>Задания есть, и вы делаете их для себя. Смотрю их я. Отчёта ради отчёта нет.</p>
+      </details>
+      <details>
+        <summary>Чем VIP отличается от Потока?</summary>
+        <p>Путь один. В VIP меньше людей, и разбор каждой ближе ко мне. Поток от этого не становится урезанным.</p>
+      </details>
+      <details>
+        <summary>Есть ли рассрочка?</summary>
+        <p>Да. Если банк не одобрит с первого раза, напишите мне, разберём другой способ. Список банков лучше спросить напрямую: он менялся.</p>
+      </details>
+      <details>
+        <summary>Что приходит после оплаты?</summary>
+        <p>Ссылка на группу. В первый день вы знакомитесь с женщинами и с пространством. После первой встречи рядом появляется свой человек.</p>
+      </details>
+      <details>
+        <summary>Это лечение?</summary>
+        <p>Нет. Это учебная работа с собой. Я не обещаю, что у всех выйдет одинаково, и не обещаю, что боль закончится навсегда.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="end">
+    <h2>Союз начинается с одного честного выбора</h2>
+    <button class="btn" type="button" data-open>Занять место</button>
+  </section>
+
+  <footer>
+    <p>Дарья Малаховская · Союз с собой</p>
+    <p>Не лечение и не обещание одного результата для всех.</p>
+  </footer>
+
+  <div class="modal" id="pay" hidden>
+    <div class="dim" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
+      <h2>Занять место</h2>
+      <p>Сюда встанет оплата. Пока даты следующего потока не названы, кнопка ничего не списывает.</p>
+    </div>
+  </div>
+  <script>
+    var modal = document.getElementById("pay");
+    function openModal(){ modal.hidden = false; document.body.style.overflow = "hidden"; }
+    function closeModal(){ modal.hidden = true; document.body.style.overflow = ""; }
+    document.querySelectorAll("[data-open]").forEach(function(el){ el.addEventListener("click", openModal); });
+    document.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+  </script>
+</body>
+</html>
