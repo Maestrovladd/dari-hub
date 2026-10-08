@@ -32,7 +32,9 @@
   .hero-inner{width:min(580px,100%)}
   .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9A6E8}
   .eyebrow::before{content:"";width:24px;height:1px;background:#C9A6E8}
-  .hero h1{margin:0 0 20px;font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:1.02;color:#fff}
+  .hero h1{margin:0 0 20px;color:#fff;line-height:.92}
+  .hero h1 .big{display:block;font-size:clamp(64px,8vw,108px);font-weight:800;letter-spacing:-.05em}
+  .hero h1 .small{display:inline-block;margin-top:6px;font-size:clamp(28px,3.2vw,44px);font-weight:600;letter-spacing:-.03em;color:#C9A6E8;border-bottom:3px solid #6B3FA0;line-height:1.15}
   .hero-pain{margin:0 0 12px;max-width:42ch;font-size:17px;line-height:1.45;color:rgba(255,255,255,.72)}
   .hero-mech{margin:0 0 14px}
   .hero-mech span{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-size:16px;font-weight:700}
@@ -144,7 +146,7 @@
     <div class="hero-left">
       <div class="hero-inner">
         <p class="eyebrow">Анкета предзаписи</p>
-        <h1>Союз с собой</h1>
+        <h1><span class="big">СОЮЗ</span><span class="small">с собой</span></h1>
         <p class="hero-pain">Я не учу, как правильно жить, и не спасаю, а возвращаю контакт с собой, чтобы вы сами выбрали свою жизнь и выдержали этот выбор.</p>
         <div class="hero-cta">
           <button class="btn" type="button" data-open>Занять место</button>
