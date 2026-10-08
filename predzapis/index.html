@@ -82,10 +82,14 @@
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
   .stream h2{color:#fff;line-height:1.18}
   .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
-  .stream-stage{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:40px;align-items:stretch;margin-bottom:48px}
-  .stream-photo{position:relative;margin:0;min-height:520px;border-radius:var(--r);overflow:hidden;background:#111}
-  .stream-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
-  .stream-photo .photo-chip{left:18px;right:auto;bottom:18px;width:max-content;max-width:calc(100% - 36px);color:var(--ink)}
+  .stream-stage{display:grid;grid-template-columns:1.05fr .82fr 1.05fr;gap:14px;align-items:stretch;margin-bottom:48px}
+  .stream-photo{position:relative;margin:0;min-height:520px;border-radius:28px;overflow:hidden;background:#111}
+  .stream-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .plaque{padding:28px 24px;border-radius:28px;background:#141414;border:1px solid rgba(255,255,255,.08)}
+  .plaque h2{margin:0 0 14px;font-size:clamp(26px,2.2vw,32px);line-height:1.15;letter-spacing:-.03em}
+  .plaque p{margin:0;font-size:16px;line-height:1.45;color:rgba(255,255,255,.78)}
+  .plaque p + p{margin-top:14px}
+  .plaque .k{margin:0 0 10px;font-size:15px;font-weight:800;color:#C9A6E8}
   .why{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.03)}
   .why .k{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#C9A6E8}
   .why p{margin:0;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.25}
@@ -217,21 +221,19 @@
     <div class="col">
       <p class="eyebrow">Следующий поток</p>
       <div class="stream-stage">
-        <figure class="stream-photo">
-          <img src="hero.jpg" alt="Дари" width="800" height="1000">
-          <figcaption class="photo-chip">
-            <b>10 недель</b>
-            <span>со мной</span>
-          </figcaption>
-        </figure>
-        <div>
+        <article class="plaque">
           <h2>Союз с собой — это десять недель со мной</h2>
-          <p class="lead">Это для вас, если вы всё тащите сами, ждёте, что вас выберут, и давно не чувствовали себя просто счастливой. Я не читаю лекции. На этих неделях мы смотрим ваши реакции, то, что вы несёте от родителей, и то, как вы себя показываете, когда боитесь остаться без чужого «да».</p>
-          <div class="why">
-            <p class="k">Проблема была не в мужчинах</p>
-            <p>Можно годами думать, что вас не любят, а дело не в нём: вы не разрешаете себе большего и называете это любовью. Страх теряет власть, когда вы говорите прямо, без «но» и «а вдруг»: мне страшно, мне больно, я не знаю, что делать, мне нужна помощь, я устала.</p>
-          </div>
-        </div>
+          <p>Это для вас, если вы всё тащите сами, ждёте, что вас выберут, и давно не чувствовали себя просто счастливой.</p>
+          <p>Я не читаю лекции. На этих неделях мы смотрим ваши реакции, то, что вы несёте от родителей, и то, как вы себя показываете, когда боитесь остаться без чужого «да».</p>
+        </article>
+        <figure class="stream-photo">
+          <img src="dari.jpg" alt="Дари" width="735" height="735">
+        </figure>
+        <article class="plaque">
+          <p class="k">Проблема была не в мужчинах</p>
+          <p>Можно годами думать, что вас не любят, а дело не в нём: вы не разрешаете себе большего и называете это любовью.</p>
+          <p>Страх теряет власть, когда вы говорите прямо, без «но» и «а вдруг»: мне страшно, мне больно, я не знаю, что делать, мне нужна помощь, я устала.</p>
+        </article>
       </div>
       <ol class="prog-map">
         <li><b>Увидеть себя</b><span>Вы замечаете, где живёте не из себя.</span></li>
