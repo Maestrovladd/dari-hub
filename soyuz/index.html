@@ -6,323 +6,176 @@
 <title>Союз с собой · Дарья Малаховская</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1A1916;--muted:#5C574E;--line:#E6E0D4;--paper:#F6F4EF;--night:#141414;--yellow:#F3FF4A}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Golos Text",sans-serif;color:var(--ink);background:#fff;line-height:1.45}
-  h1,h2,h3,.q{font-family:Unbounded,sans-serif}
-  h1,h2,h3,p,li,.btn{text-wrap:pretty}
-  button,a.btn{font-family:inherit;cursor:pointer;border:none;background:none;text-decoration:none}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:14px 28px;background:var(--ink);color:#fff;border-radius:999px;font-weight:700}
-  .btn:hover{transform:translateY(-2px)}
-  .btn.y{background:var(--yellow);color:#141414}
-  .wrap{max-width:1120px;margin:0 auto}
-  .hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;background:var(--paper)}
-  .hero-l{padding:56px 40px 56px 6vw;display:flex;flex-direction:column;justify-content:center}
-  .eye{width:max-content;background:var(--ink);color:#fff;border-radius:999px;padding:8px 14px;font-weight:700;margin-bottom:18px}
-  h1{font-size:clamp(34px,4.2vw,58px);line-height:1.05;letter-spacing:-.04em;margin-bottom:16px}
-  .lead{font-size:20px;max-width:24em;margin-bottom:22px}
-  .when{margin-top:18px;color:var(--muted);max-width:28em}
-  .hero-r{background:var(--night);color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end}
-  .q{font-size:clamp(26px,2.6vw,40px);line-height:1.15;letter-spacing:-.03em;max-width:11em;margin:auto 0 20px}
-  .q span{color:var(--yellow)}
-  .cap{background:#fff;color:var(--ink);border-radius:22px;padding:18px 18px 16px;max-width:380px}
-  .cap strong{font-size:22px}
-  .cap li{margin-top:8px;margin-left:1.1em}
-  .band{background:var(--night);color:#fff;padding:64px 6vw}
-  .band h2{font-size:clamp(28px,3.4vw,44px);letter-spacing:-.04em;max-width:16em;margin-bottom:22px}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .stats article{background:#1c1c1c;border-radius:18px;padding:18px}
-  .stats b{display:block;font-family:Unbounded,sans-serif;font-size:34px;color:var(--yellow);letter-spacing:-.04em}
-  section{padding:72px 6vw}
-  h2{font-size:clamp(30px,3.6vw,48px);letter-spacing:-.04em;line-height:1.08;margin-bottom:16px}
-  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-  .pair + .pair{margin-top:12px}
-  .pair article{border-radius:20px;padding:22px;border:1px solid var(--line)}
-  .now{background:var(--paper)}
-  .go{background:var(--night);color:#fff;border-color:var(--night)}
-  .pair h3{font-size:18px;margin-bottom:8px}
-  .pair li{margin:8px 0 0 1em}
-  .paper{background:var(--paper)}
-  .feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-  .feats article{background:#fff;border-radius:18px;padding:20px;border:1px solid var(--line)}
-  .feats b{display:block;margin-bottom:6px}
-  .cta{text-align:center;background:var(--night);color:#fff}
-  .cta p{margin:0 auto 18px;max-width:28em;font-size:20px}
-  .work{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-  .work li{margin:10px 0 0 1em}
-  .mod{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;background:var(--paper);border-radius:24px;padding:28px;margin-top:14px}
-  .mod h3{font-size:28px;letter-spacing:-.03em;margin-bottom:8px}
-  .mod li{margin:8px 0 0 1em}
-  .note{margin-bottom:18px;max-width:40em}
-  .tariffs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .tariffs article{background:#1c1c1c;color:#fff;border-radius:24px;padding:26px}
-  .vip{outline:2px solid var(--yellow)}
-  .sum{font-family:Unbounded,sans-serif;font-size:40px;letter-spacing:-.04em;margin:8px 0 12px}
-  .tariffs li{margin:8px 0 0 1em}
-  .tariffs .btn{margin-top:20px}
-  .who{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center}
-  .who img{width:100%;border-radius:28px;max-height:560px;object-fit:cover}
-  .who p+p{margin-top:12px}
-  details{border-top:1px solid var(--line);padding:14px 0}
-  summary{cursor:pointer;font-weight:700;font-size:18px}
-  details p{margin-top:8px;max-width:42em}
-  footer{padding:28px 6vw 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  footer a{color:inherit}
-  .modal[hidden]{display:none}
-  .modal{position:fixed;inset:0;z-index:5}
-  .dim{position:absolute;inset:0;background:rgba(0,0,0,.55)}
-  .card{position:relative;background:#fff;width:min(460px,calc(100% - 28px));margin:14vh auto;border-radius:22px;padding:26px}
-  .x{position:absolute;top:8px;right:12px;font-size:28px}
-  @media(max-width:900px){
-    .hero,.pair,.stats,.feats,.work,.mod,.tariffs,.who{grid-template-columns:1fr}
-    .hero-l{padding:36px 20px}
+  :root{
+    --night:#0E0D14;
+    --ink:#F4F1F8;
+    --muted:#C4BDD0;
+    --line:rgba(244,241,248,.16);
+    --plum:#1A122A;
+    --grape:#442661;
   }
-  @media(prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Golos Text",sans-serif;background:var(--night);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Unbounded,sans-serif;font-weight:500;letter-spacing:-.04em;line-height:1.08}
+  h1,h2,h3,p,li,a{text-wrap:pretty}
+  a{color:inherit}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 6vw;font-size:14px;font-weight:600}
+  .nav a{text-decoration:none}
+  .nav-links{display:flex;gap:18px;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+  .hero{min-height:92svh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;padding:4vh 6vw 72px}
+  h1{font-size:clamp(56px,8vw,112px);max-width:8em}
+  .hero-copy{max-width:28em;margin-top:28px;font-size:18px;color:var(--muted)}
+  .hero-copy strong{color:var(--ink);font-weight:600}
+  .hero-photo{margin:0;border-radius:28px;overflow:hidden;min-height:520px;background:#16121f}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:28px;padding:14px 22px;border:1px solid rgba(244,241,248,.45);color:#fff;text-decoration:none;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;transition:background .2s ease,transform .2s ease}
+  .btn:hover{background:rgba(244,241,248,.08);transform:translateY(-1px)}
+  .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .quote{padding:88px 6vw 80px;max-width:1100px}
+  .quote h2{font-size:clamp(34px,4.6vw,64px);max-width:14em}
+  .quote p{margin-top:28px;max-width:36em;font-size:20px;color:var(--muted)}
+  .path{background:var(--plum);padding:88px 6vw}
+  .path h2{font-size:clamp(40px,5.4vw,76px);max-width:10em;margin-bottom:18px}
+  .path .lead{max-width:36em;color:var(--muted);font-size:18px;margin-bottom:12px}
+  .step{padding:28px 0;border-top:1px solid var(--line)}
+  .step h3{font-size:clamp(32px,4vw,52px);margin-bottom:10px}
+  .step p{max-width:36em;color:var(--muted);font-size:18px}
+  .inside{padding:88px 6vw}
+  .inside h2{font-size:clamp(40px,5.4vw,72px);max-width:10em;margin-bottom:12px}
+  .row{padding:22px 0;border-top:1px solid var(--line);font-size:20px}
+  .tariffs{padding:40px 6vw 88px}
+  .tariffs h2{font-size:clamp(36px,4.6vw,60px);max-width:12em}
+  .tariffs .lead{margin:16px 0 32px;max-width:36em;color:var(--muted);font-size:18px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{border:1px solid var(--line);padding:28px 28px 32px;background:#120f18}
+  .card.vip{background:var(--grape);border-color:transparent}
+  .card .name{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .card.vip .name{color:rgba(244,241,248,.72)}
+  .price{font-family:Unbounded,sans-serif;font-size:clamp(32px,3vw,44px);letter-spacing:-.04em;margin-bottom:8px}
+  .card p{color:var(--muted);margin-bottom:18px}
+  .card.vip p{color:rgba(244,241,248,.82)}
+  .card ul{padding-left:1.1em}
+  .card li{margin-top:8px}
+  .close{background:linear-gradient(180deg,#5A3480 0%,var(--grape) 42%,#3A2058 100%);padding:100px 6vw 88px}
+  .close h2{font-size:clamp(40px,5.6vw,78px);max-width:12em}
+  .close .btn{background:#6E4298;border-color:transparent}
+  .close .btn:hover{background:#7C4EAA}
+  footer{padding:28px 6vw 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media (max-width:800px){
+    .hero,.grid{grid-template-columns:1fr}
+    .hero-photo{min-height:420px}
+    h1{font-size:clamp(46px,12vw,72px)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn{transition:none}
+    .btn:hover{transform:none}
+  }
 </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-l">
-      <p class="eye">Союз с собой</p>
-      <h1>Можно знать о себе всё и жить против себя</h1>
-      <p class="lead">Десять недель со мной. Изменение начинается не там, где вы поняли ещё больше. А там, где вы сделали другой выбор и остались с собой после него.</p>
-      <button class="btn" type="button" data-open>Занять место</button>
-      <p class="when">Дату старта я назову, когда она будет. Пока кнопка ничего не списывает.</p>
+  <nav class="nav">
+    <a href="../proekty/">Дарья Малаховская</a>
+    <div class="nav-links">
+      <a href="../proekty/">Проекты</a>
+      <a href="../predzapis/">Предзапись</a>
     </div>
-    <div class="hero-r">
-      <p class="q">Что бы ни было снаружи, <span>внутри у меня есть я.</span></p>
-      <div class="cap">
-        <strong>Дарья Малаховская</strong>
-        <ul>
-          <li>автор метода «Точка выбора»</li>
-          <li>6 лет с женщинами, которые всё тащат сами</li>
-          <li>не учу, как правильно. Показываю, где вы себя сдаёте</li>
-        </ul>
-      </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <p class="kicker">Дарья Малаховская</p>
+      <h1>Союз с собой</h1>
+      <p class="hero-copy">Автор метода «Точка выбора». <strong>Дата следующего сезона будет объявлена позже.</strong></p>
+      <a class="btn" href="../predzapis/">Предзапись</a>
     </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <h2>Это не записанный курс. Десять недель живой работы, где я веду сама.</h2>
-      <div class="stats">
-        <article><b>4</b><p>сезона уже были. Вы заходите не в первый круг.</p></article>
-        <article><b>3 000+</b><p>женщин пришли на три дня в прошлый раз. Места закончились.</p></article>
-        <article><b>10</b><p>недель. Встречи живые, в Zoom, не «посмотрите, когда удобно».</p></article>
-        <article><b>6 лет</b><p>я работаю с женщинами, у которых снаружи сила, а себя у себя нет.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Они приходят не за новой теорией. С одним и тем же.</h2>
-      <div class="feats">
-        <article><b>Голова уже всё знает</b><p>Травмы, сценарии и причины названы. Жизнь при этом идёт по-старому.</p></article>
-        <article><b>В любви отдают больше</b><p>Ждут, что их выберут. Имена мужчин меняются, повтор остаётся.</p></article>
-        <article><b>Сила оказалась терпением</b><p>Тащат, гребут, стыдно хотеть денег и стыдно хотеть себя.</p></article>
-        <article><b>«Нет» не держится</b><p>Сказали нет и три дня объясняют, почему имели на него право.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="paper">
-    <div class="wrap">
-      <h2>Сейчас и куда ведёт работа</h2>
-      <p>Справа не обещание, что у всех выйдет одинаково. Справа то, куда я веду эти десять недель.</p>
-      <div class="pair">
-        <article class="now"><h3>Сейчас. Понимаете и стоите</h3><ul><li>Можно знать о себе всё и жить против себя.</li><li>Жизнь стала днём сурка.</li><li>Ошибка кажется доказательством, что с вами что-то не так.</li></ul></article>
-        <article class="go"><h3>Куда ведёт работа</h3><ul><li>Вы видите повтор раньше, чем опять в нём живёте.</li><li>Спрашиваете не «как правильно», а «как моё».</li><li>Остаётесь с выбором, а не с новым объяснением.</li></ul></article>
-      </div>
-      <div class="pair">
-        <article class="now"><h3>Сейчас. Отношения</h3><ul><li>Отдаёте больше, чем получаете.</li><li>Стелитесь, чтобы вас выбрали.</li><li>Любовью пытаетесь починить другого человека.</li></ul></article>
-        <article class="go"><h3>Куда ведёт работа</h3><ul><li>Вас не должен выбирать никто, кроме вас самих.</li><li>Можно любить и не исчезать.</li><li>Вы перестаёте быть ремонтной бригадой для чужой жизни.</li></ul></article>
-      </div>
-      <div class="pair">
-        <article class="now"><h3>Сейчас. Деньги и сила</h3><ul><li>Сила, которой вас научили, это терпеть и грести.</li><li>Деньги, энергия и чувство собственной силы утекают.</li><li>Стыдно хотеть.</li></ul></article>
-        <article class="go"><h3>Куда ведёт работа</h3><ul><li>Женская сила не кричит и не доказывает. Она течёт.</li><li>Деньги просят той же честности, что и желание.</li><li>Энергию из чужого колодца вы направляете в свой.</li></ul></article>
-      </div>
-      <div class="pair">
-        <article class="now"><h3>Сейчас. Своё «нет»</h3><ul><li>Без чужого «да» решение не считается.</li><li>После своего «нет» вы три дня оправдываетесь.</li><li>Соглашаетесь на крохи и называете это любовью.</li></ul></article>
-        <article class="go"><h3>Куда ведёт работа</h3><ul><li>Один раз выбираете себя и не сдаёте это обратно.</li><li>Граница стоит, и вы сами себя за неё не сдаёте.</li><li>Всё реже нужно внешнее разрешение на свою жизнь.</li></ul></article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Что реально есть внутри</h2>
-      <div class="feats">
-        <article><b>Живые встречи</b><p>Раз в неделю я с вами в Zoom, полтора или два часа. За десять недель встреч десять или двенадцать. Иногда к вечеру может подключиться другой человек.</p></article>
-        <article><b>Разборы</b><p>На встречах разбираем живые ситуации, не чужой конспект. В VIP разбор ближе: людей меньше.</p></article>
-        <article><b>Между встречами</b><p>Есть задания. Вы делаете их для себя. Смотрю их я. Отчёта ради отчёта нет.</p></article>
-        <article><b>Записи</b><p>Остаются у вас на обоих тарифах. Прийти самой всё равно дороже записи.</p></article>
-        <article><b>Свой круг</b><p>Группа в Telegram. После первой встречи рядом появляется женщина, с которой вы идёте.</p></article>
-        <article><b>Деньги за вход</b><p>Рассрочка есть. Поток 69 900 ₽. VIP 150 000 ₽. Путь один и тот же.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Хочу в Союз</h2>
-    <p>Если внутри звучит «хочу по-другому», место берётся здесь. Кто в прошлый раз думала «потом», не попала: места закончились.</p>
-    <button class="btn y" type="button" data-open>Занять место</button>
-  </section>
-
-  <section class="paper">
-    <div class="wrap work">
-      <h2>С вами работаю я. Не безликий чат.</h2>
-      <div>
-        <p>Задания смотрю я. Встречи веду я. Чужого человека, который отвечает за меня, нет.</p>
-        <ul>
-          <li>Не учу, как правильно жить.</li>
-          <li>Показываю, где вы отдаёте себя и называете это любовью.</li>
-          <li>Не спасаю и не становлюсь человеком, без которого вы не решаете.</li>
-          <li>На VIP разбираю ближе. Поток от этого не урезан: недели те же.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Как идут десять недель</h2>
-      <p>Это не список лекций. Каждый шаг — живая работа.</p>
-      <article class="mod">
-        <div><h3>Увидеть</h3><p>Где вы живёте не из себя.</p></div>
-        <ul>
-          <li>Какие решения вы принимаете из страха, долга и привычки.</li>
-          <li>Где жизнь уже стала днём сурка, хотя снаружи всё собрано.</li>
-          <li>Пока себя у себя нет, вас выбирают другие.</li>
-        </ul>
-      </article>
-      <article class="mod">
-        <div><h3>Выдержать</h3><p>Не убежать от того, что увидели.</p></div>
-        <ul>
-          <li>Не сделать из правды очередной повод себя разрушить.</li>
-          <li>Родители, тени и реакции остаются в работе, а не в лозунге «я уже проработала».</li>
-          <li>Стыд больше не решает за вас, какую жизнь вам можно.</li>
-        </ul>
-      </article>
-      <article class="mod">
-        <div><h3>Выбрать</h3><p>Перестать ждать разрешения.</p></div>
-        <ul>
-          <li>Вопрос не «как правильно», а «как моё».</li>
-          <li>Деньги, желание и то, как вы себя показываете, проверяются одним и тем же: вы честны с собой или стыдно хотеть.</li>
-          <li>Нельзя исправить человека, любя его сильнее. Занимаетесь собой.</li>
-        </ul>
-      </article>
-      <article class="mod">
-        <div><h3>Интегрировать</h3><p>Оставить выбор в обычных днях.</p></div>
-        <ul>
-          <li>Не сорваться в старый сценарий на следующей ссоре и на следующем «нет».</li>
-          <li>Между встречами вы живёте это, а не коллекционируете понимания.</li>
-          <li>В конце есть выпускная встреча. Дальше выбираете вы.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <h2>Два тарифа. Один путь.</h2>
-      <p class="note">Рассрочка есть. Если банк не одобрит, напишите, посмотрим другой способ.</p>
-      <div class="tariffs">
-        <article>
-          <h3>Поток</h3>
-          <p class="sum">69 900 ₽</p>
-          <ul>
-            <li>10 недель</li>
-            <li>живые встречи в общем круге</li>
-            <li>закрытый чат в Telegram</li>
-            <li>задания, которые смотрю я</li>
-            <li>записи остаются</li>
-            <li>после первой встречи свой человек рядом</li>
-            <li>выпускная встреча</li>
-          </ul>
-          <button class="btn y" type="button" data-open>Занять место в Потоке</button>
-        </article>
-        <article class="vip">
-          <h3>VIP</h3>
-          <p class="sum">150 000 ₽</p>
-          <ul>
-            <li>всё, что в Потоке</li>
-            <li>меньше людей</li>
-            <li>разбор ближе ко мне</li>
-            <li>приоритет в живых разборах</li>
-            <li>те же недели, не другой продукт</li>
-            <li>записи тоже остаются</li>
-            <li>выпускная встреча</li>
-          </ul>
-          <button class="btn y" type="button" data-open>Занять место в VIP</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>В конце есть выпускная встреча</h2>
-      <p>Это не поездка и не праздник, которого я вам не обещала. Это точка, где десять недель заканчиваются, и дальше вы живёте свой выбор без меня как костыля. Спасать не буду. Покажу один раз.</p>
-    </div>
-  </section>
-
-  <section class="paper">
-    <div class="wrap who">
+    <figure class="hero-photo">
       <img src="dari.jpg" alt="Дарья Малаховская" width="735" height="735">
-      <div>
-        <h2>Откуда я это веду</h2>
-        <p>Шесть лет я смотрю на женщин, которые снаружи уже эксперты, предпринимательницы, сильные. Внутри себя у себя нет. Они истощены, в отношениях отдают больше, чем получают, и теряют деньги, энергию и чувство собственной силы.</p>
-        <p>Я не буду вас ничему учить. Я покажу, как устроен мир, в котором вы не пешка. Метод, которым я это делаю, называется «Точка выбора»: увидеть, выдержать, выбрать и оставить это в жизни.</p>
-        <p>В прошлый раз на три дня ко мне пришло больше трёх тысяч женщин. Места закончились. Кто думала «потом», не попала.</p>
-      </div>
+    </figure>
+  </header>
+
+  <section class="quote">
+    <p class="kicker">О чём этот проект</p>
+    <h2>Можно знать о себе всё — свои травмы, сценарии и причины — и продолжать жить против себя.</h2>
+    <p>Изменение начинается не там, где вы поняли ещё больше. А там, где вы сделали другой выбор и остались с собой после него.</p>
+  </section>
+
+  <section class="path">
+    <p class="kicker">Логика пути</p>
+    <h2>Из понимания в собственную жизнь</h2>
+    <p class="lead">Каждый этап — не лекция о том, как правильно. Это пространство живой работы, практики и интеграции.</p>
+    <article class="step">
+      <h3>Увидеть</h3>
+      <p>Где вы живёте не из себя. Какие решения принимаете из страха, долга и привычки.</p>
+    </article>
+    <article class="step">
+      <h3>Выдержать</h3>
+      <p>Не убежать от правды о себе и не превратить её в очередной повод себя разрушить.</p>
+    </article>
+    <article class="step">
+      <h3>Выбрать</h3>
+      <p>Перестать ждать разрешения и сделать действие, которое возвращает вам авторство.</p>
+    </article>
+    <article class="step">
+      <h3>Интегрировать</h3>
+      <p>Не сорваться обратно в старый сценарий, а встроить новый выбор в повседневную жизнь.</p>
+    </article>
+  </section>
+
+  <section class="inside">
+    <p class="kicker">Внутри проекта</p>
+    <h2>Живой процесс. Не записанный курс.</h2>
+    <p class="row">Живые групповые встречи с Дарьей</p>
+    <p class="row">Закрытое конфиденциальное пространство</p>
+    <p class="row">Практики и задания для интеграции</p>
+    <p class="row">Обратная связь в объёме выбранного тарифа</p>
+    <p class="row">Книга Дарьи после выпуска — в подарок</p>
+  </section>
+
+  <section class="tariffs" id="uchastie">
+    <p class="kicker">Тарифы</p>
+    <h2>Выберите глубину своего процесса</h2>
+    <p class="lead">Оба тарифа ведут по одной программе. Отличается объём личного сопровождения и близость работы с Дарьей.</p>
+    <div class="grid">
+      <article class="card">
+        <p class="name">Поток</p>
+        <p class="price">69 900 ₽</p>
+        <p>Для самостоятельного прохождения в сильном групповом поле.</p>
+        <ul>
+          <li>10 недель проекта</li>
+          <li>Живые групповые встречи</li>
+          <li>Закрытый чат участников</li>
+          <li>Материалы и практики</li>
+          <li>Доступ к разрешённым записям</li>
+          <li>Книга после выпуска в подарок</li>
+        </ul>
+      </article>
+      <article class="card vip">
+        <p class="name">VIP</p>
+        <p class="price">170 000 ₽</p>
+        <p>Для тех, кому важна более личная и глубокая работа внутри процесса. Точный состав VIP подтверждается перед открытием продаж.</p>
+        <ul>
+          <li>Всё, что входит в тариф Поток</li>
+          <li>Дополнительная личная работа</li>
+          <li>Приоритет в живых разборах</li>
+        </ul>
+      </article>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <h2>Ответы на вопросы</h2>
-      <details open><summary>Сколько длится и где мы видимся?</summary><p>Десять недель. Встреч десять или двенадцать. Я с вами раз в неделю, полтора или два часа, в Zoom. Группа в Telegram.</p></details>
-      <details><summary>Это записи, которые смотрят когда угодно?</summary><p>Нет. Встречи живые. Записи остаются у вас на обоих тарифах, но живой приход с ними не сравнится.</p></details>
-      <details><summary>Кто смотрит задания?</summary><p>Я. Задания для вас, не для галочки. Куратора с отдельным именем нет.</p></details>
-      <details><summary>Чем VIP отличается от Потока?</summary><p>Программа одна. В VIP меньше людей и разбор ближе ко мне. Поток не урезанный тариф.</p></details>
-      <details><summary>Что после оплаты?</summary><p>Ссылка на группу. В первый день вы знакомитесь с женщинами. После первой встречи рядом появляется свой человек.</p></details>
-      <details><summary>Есть ли рассрочка?</summary><p>Да. Если один банк не одобрит, напишите мне в @DARSIM13, посмотрим другой способ. Точный список банков лучше спросить: он менялся.</p></details>
-      <details><summary>Когда старт?</summary><p>Дату я назову отдельно. На этой странице её нет, потому что она ещё не назначена.</p></details>
-      <details><summary>Это лечение?</summary><p>Нет. Я не обещаю, что у всех выйдет одинаково, и не обещаю, что боль закончится навсегда.</p></details>
-      <details><summary>Можно вернуть деньги?</summary><p>Условия возврата я отдельно не публиковала. Если это решает вход, спросите до оплаты.</p></details>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Нет ответа на ваш вопрос?</h2>
-    <p>Напишите мне. Лучше спросить, чем опять отказаться от себя, потому что страшно.</p>
-    <a class="btn y" href="https://t.me/DARSIM13" target="_blank" rel="noopener">Написать Дари</a>
+  <section class="close">
+    <p class="kicker">Следующий сезон</p>
+    <h2>Союз начинается с одного честного выбора.</h2>
+    <a class="btn" href="../predzapis/">Выбрать участие</a>
   </section>
 
   <footer>
     <p>Дарья Малаховская · Союз с собой</p>
-    <p><a href="https://t.me/daarisoul" target="_blank" rel="noopener">Канал</a></p>
-    <p>Не лечение и не один результат для всех.</p>
+    <p>Это работа с собой. Я не лечу и не обещаю, что у каждой выйдет одно и то же.</p>
   </footer>
-
-  <div class="modal" id="pay" hidden>
-    <div class="dim" data-close></div>
-    <div class="card" role="dialog" aria-modal="true">
-      <button class="x" type="button" data-close aria-label="Закрыть">×</button>
-      <h2>Занять место</h2>
-      <p>Сюда встанет оплата. Даты старта ещё нет, кнопка ничего не списывает.</p>
-    </div>
-  </div>
-  <script>
-    var modal=document.getElementById("pay");
-    function openModal(){modal.hidden=false;document.body.style.overflow="hidden"}
-    function closeModal(){modal.hidden=true;document.body.style.overflow=""}
-    document.querySelectorAll("[data-open]").forEach(function(el){el.addEventListener("click",openModal)});
-    document.querySelectorAll("[data-close]").forEach(function(el){el.addEventListener("click",closeModal)});
-    document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
-  </script>
 </body>
 </html>
