@@ -6,251 +6,240 @@
 <title>Предзапись · Союз с собой</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Schibsted+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1A1522;
-    --muted:#5E5668;
-    --paper:#F4F1F8;
-    --white:#FFFCFA;
-    --line:#E4DCEA;
-    --violet:#3C1860;
-    --mark:#E4CCFF;
-    --ease:cubic-bezier(.22,1,.36,1);
+    --g:#6B3FA0;--g-dark:#3E2468;--g-light:#F3ECFA;
+    --paper:#FFFCFA;--off:#F7F4F2;--ink:#1A1A1A;--muted:#6B6570;
+    --r:24px;
+    --shadow:0 18px 40px color-mix(in oklab, var(--g-dark) 16%, transparent);
+    --ease:cubic-bezier(.23,1,.32,1);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:"Golos Text",sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
-  mark{background:linear-gradient(transparent 62%, var(--mark) 62%);color:inherit}
-  button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  body{margin:0;font-family:"Golos Text",sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-size:16px}
+  h1,h2,h3,.hero-mech span,.close-left,.card h3{font-family:"Schibsted Grotesk",sans-serif}
   img{display:block;max-width:100%}
-  .nav{position:fixed;top:0;left:0;right:0;z-index:8;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;color:#fff;transition:background .25s var(--ease),color .25s var(--ease)}
-  .nav.solid{background:rgba(244,241,248,.94);color:var(--ink);backdrop-filter:blur(12px)}
-  .nav b{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;letter-spacing:-.03em}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:62px;padding:0 32px;border-radius:999px;background:var(--violet);color:#fff;font-size:17px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;transition:transform .2s var(--ease),background .2s var(--ease)}
-  .btn:hover{background:#542484;transform:translateY(-2px)}
+  button{font-family:inherit}
+  ul{margin:0;padding:0;list-style:none}
+  .col{width:min(1120px,calc(100% - 96px));margin:0 auto}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:var(--ink)}
+  .logo{font-size:15px;font-weight:600;color:#fff}
+  .nav-cta{height:44px;padding:0 20px;border:0;border-radius:999px;background:var(--g);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
+  .nav-cta:hover{background:var(--g-dark)}
+  .hero{display:grid;grid-template-columns:1.25fr .85fr;height:calc(100svh - 84px);min-height:640px;background:var(--ink)}
+  .hero-left{display:flex;flex-direction:column;justify-content:center;padding:48px 56px 72px 48px;position:relative}
+  .hero-inner{width:min(580px,100%)}
+  .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9A6E8}
+  .eyebrow::before{content:"";width:24px;height:1px;background:#C9A6E8}
+  .hero h1{margin:0 0 20px;font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:1.02;color:#fff}
+  .hero-pain{margin:0 0 12px;max-width:42ch;font-size:17px;line-height:1.45;color:rgba(255,255,255,.72)}
+  .hero-mech{margin:0 0 14px}
+  .hero-mech span{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-size:16px;font-weight:700}
+  .hero-how{margin:0 0 28px;max-width:46ch;font-size:16px;line-height:1.5;color:rgba(255,255,255,.55)}
+  .hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .hero-gift{margin:0;width:min(260px,100%);padding:12px 16px;background:color-mix(in oklab, var(--g) 28%, #1a1a1a);border:1px solid color-mix(in oklab, var(--g) 50%, transparent);border-radius:16px;color:rgba(255,255,255,.88);font-size:13px;line-height:1.4}
+  .hero-right{position:relative;overflow:hidden;background:var(--g-dark)}
+  .hero-right::before{content:"";position:absolute;inset:0 auto 0 0;width:140px;background:linear-gradient(to right, var(--ink), transparent);z-index:2}
+  .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .photo-cap{position:absolute;left:28px;bottom:28px;z-index:3;width:min(240px,calc(100% - 48px));padding:14px 16px;background:var(--paper);border-radius:16px;box-shadow:var(--shadow)}
+  .photo-cap strong{display:block;font-size:16px;font-weight:800}
+  .photo-cap span{font-size:13px;color:var(--muted)}
+  .scroll-cue{position:absolute;left:48px;bottom:28px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.45);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+  .scroll-cue svg{width:28px;height:28px;animation:cue 1.6s var(--ease) infinite}
+  @keyframes cue{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(8px);opacity:1}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 32px;border:0;border-radius:999px;background:var(--g);color:#fff;font-size:16px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 8px 32px color-mix(in oklab, var(--g) 45%, transparent);transition:transform .18s var(--ease),background .18s ease}
+  .btn:hover{background:var(--g-dark);transform:translateY(-2px)}
   .btn:active{transform:scale(.98)}
-  .btn:focus-visible,.modal-x:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
-  .nav .btn{min-height:46px;padding:0 18px;font-size:15px}
-
-  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:#120e16;overflow:hidden}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.06);animation:settle 1.4s var(--ease) both}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,8,16,.15) 0%,rgba(12,8,16,.2) 40%,rgba(12,8,16,.82) 100%)}
-  .hero-copy{position:relative;z-index:1;width:min(920px,calc(100% - 10vw));padding:0 0 72px 5vw}
-  .kicker{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:16px}
-  h1{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:clamp(64px,8vw,112px);line-height:.9;letter-spacing:-.05em;margin-bottom:18px}
-  .offer{font-family:"Schibsted Grotesk",sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.15;letter-spacing:-.03em;max-width:16em;margin-bottom:28px}
-  .hero .offer mark{background:linear-gradient(transparent 68%, rgba(228,204,255,.85) 68%)}
-  .hero-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-  .hero-row p{max-width:34em;font-size:16px;line-height:1.45;color:rgba(255,255,255,.86)}
-  .hero-row strong{color:#fff}
-
-  .sheet{position:relative;z-index:2;margin-top:-36px;background:var(--paper);border-radius:36px 36px 0 0;padding:72px 5vw 40px}
-  .sheet h2{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:clamp(32px,3.6vw,48px);line-height:1.15;letter-spacing:-.035em;max-width:18em}
-  .pill{display:inline-flex;margin-top:22px;background:var(--ink);color:#fff;border-radius:999px;padding:12px 20px;font-weight:700}
-
-  .days{padding:28px 5vw 20px}
-  .day{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:32px 0;border-top:1px solid var(--line)}
-  .day-top{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);padding-top:6px}
-  .day h3{font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
-  .day li{margin:0 0 8px 1em;color:var(--muted);font-size:17px}
-  .itog{margin-top:14px;font-size:18px;font-weight:700;max-width:36em}
-
-  .path{padding:48px 5vw 20px}
-  .path .kicker{color:var(--violet)}
-  .path-row{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
-  .path-row h3{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:clamp(26px,2.6vw,36px);letter-spacing:-.03em;line-height:1.1}
-  .path-row p{font-size:18px;color:var(--muted);max-width:36em}
-
-  .forwhom{padding:12px 5vw 48px;max-width:46em}
-  .forwhom p{font-size:clamp(22px,2.4vw,30px);font-family:"Schibsted Grotesk",sans-serif;font-weight:600;letter-spacing:-.03em;line-height:1.25}
-  .forwhom p + p{margin-top:16px}
-
-  .weeks{display:grid;grid-template-columns:.9fr 1.1fr;min-height:640px;background:var(--white)}
-  .weeks figure{margin:0;min-height:520px;overflow:hidden}
-  .weeks img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
-  .weeks-copy{padding:64px 6vw 64px 48px;display:flex;flex-direction:column;justify-content:center}
-  .weeks h2{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:clamp(40px,4vw,64px);line-height:.95;letter-spacing:-.045em;margin:8px 0 16px}
-  .weeks p{font-size:18px;color:var(--muted);max-width:34em}
-  .weeks p + p{margin-top:14px}
-  .weeks .solid{color:var(--ink);font-weight:700}
-
-  .gifts{padding:64px 5vw;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line)}
-  .gifts article{padding:8px 28px 8px 0;border-right:1px solid var(--line)}
-  .gifts article:last-child{border-right:0;padding-right:0}
-  .gifts p{font-size:18px;font-weight:600;line-height:1.4}
-  .gifts .hot{color:var(--violet)}
-
-  .close{margin:0 5vw 72px;background:var(--violet);color:#fff;border-radius:28px;padding:56px 48px;display:grid;grid-template-columns:1.3fr auto;gap:24px;align-items:end}
-  .close .kicker{color:var(--mark)}
-  .close h2{font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-.04em;max-width:12em}
-  .close .btn{background:#fff;color:var(--violet)}
-  .close p.note{margin-top:16px;max-width:36em;font-size:18px;line-height:1.45}
-  footer{padding:0 5vw 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
+  .get{background:var(--off);padding:88px 0}
+  h2{margin:0 0 14px;font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12}
+  h2 em,.learn-h em{font-style:normal;color:var(--g-dark)}
+  .center{text-align:center}
+  .center-wrap{display:flex;justify-content:center;margin:0 0 40px}
+  .get-pill{display:inline-flex;align-items:center;min-height:48px;padding:10px 28px;background:var(--g-dark);color:#fff;border-radius:999px;font-size:16px;font-weight:600}
+  .learn-h{margin:0 0 24px;text-align:center;font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:-.03em}
+  .ephir{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,300px) minmax(0,1fr);gap:8px 28px;align-items:center;margin-bottom:28px}
+  .ephir-list li{position:relative;margin-bottom:18px;padding-left:18px;font-size:16px;font-weight:600;line-height:1.45}
+  .ephir-list li:last-child{margin-bottom:0}
+  .ephir-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--g)}
+  .ephir-window{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--g-dark);box-shadow:var(--shadow)}
+  .ephir-window img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
+  .ephir-window::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgb(26 26 26 / .45), transparent 42%)}
+  .photo-chip{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;padding:12px 14px;border-radius:16px;background:var(--paper);box-shadow:var(--shadow)}
+  .photo-chip b{display:block;font-size:14px;font-weight:800}
+  .photo-chip span{font-size:12px;color:var(--muted)}
+  .cards3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .card{padding:28px 26px 32px;background:#fff;border-radius:var(--r);box-shadow:0 10px 28px color-mix(in oklab, var(--g-dark) 8%, transparent)}
+  .card h3{margin:0 0 10px;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.3}
+  .card p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+  .get-cta{display:flex;justify-content:center;margin-top:36px}
+  .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
+  .stream h2{color:#fff;line-height:1.18}
+  .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
+  .stream-stage{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:40px;align-items:stretch;margin-bottom:48px}
+  .stream-photo{position:relative;margin:0;min-height:520px;border-radius:var(--r);overflow:hidden;background:#111}
+  .stream-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+  .stream-photo .photo-chip{left:18px;right:auto;bottom:18px;width:max-content;max-width:calc(100% - 36px);color:var(--ink)}
+  .why{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.03)}
+  .why .k{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#C9A6E8}
+  .why p{margin:0;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.25}
+  .prog-map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:28px 0 0;padding:0;list-style:none}
+  .prog-map li{min-height:120px;padding:18px 16px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.03)}
+  .prog-map b{display:block;font-family:"Schibsted Grotesk",sans-serif;font-size:16px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+  .prog-map span{display:block;margin-top:8px;font-size:13px;line-height:1.4;color:rgba(255,255,255,.62)}
+  .close-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+  .close-left{margin:0;font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.22}
+  .close-right p{margin:0 0 24px;font-size:17px;line-height:1.5;color:rgba(255,255,255,.7)}
+  .footer{padding:36px 48px;background:#111;color:rgba(255,255,255,.45);font-size:13px}
+  .footer .logo{color:rgba(255,255,255,.85)}
+  .modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:24px}
   .modal[hidden]{display:none}
-  .modal{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center}
-  .dim{position:absolute;inset:0;background:rgba(20,12,28,.55)}
-  .modal-card{position:relative;z-index:1;width:min(460px,calc(100% - 32px));background:#fff;border-radius:24px;padding:32px 28px}
-  .modal-x{position:absolute;top:8px;right:14px;font-size:30px;color:var(--muted)}
-  .modal-card h2{font-family:"Schibsted Grotesk",sans-serif;font-size:28px;letter-spacing:-.03em;margin-bottom:8px}
-  .modal-card p{color:var(--muted);font-size:17px}
-
-  .rise{animation:rise .7s var(--ease) both}
-  .rise:nth-child(2){animation-delay:.08s}
-  .rise:nth-child(3){animation-delay:.16s}
-  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
-  .wait{opacity:0;transform:translateY(18px)}
-  .in{opacity:1;transform:none;transition:opacity .6s var(--ease),transform .6s var(--ease)}
-
-  @media(max-width:860px){
-    .day,.path-row,.weeks,.gifts,.close{grid-template-columns:1fr}
-    .gifts article{border-right:0;border-top:1px solid var(--line);padding:18px 0}
-    .weeks-copy{padding:32px 20px 40px}
-    .sheet,.days,.path,.forwhom,.gifts{padding-left:20px;padding-right:20px}
-    .hero-copy{padding-left:20px;padding-bottom:64px}
-    .close{margin:0 20px 48px;padding:32px 24px}
-    h1{font-size:64px}
+  .modal-backdrop{position:absolute;inset:0;background:rgb(26 26 26 / .62)}
+  .modal-card{position:relative;z-index:1;width:min(480px,100%);padding:36px 28px;background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow)}
+  .modal-x{position:absolute;top:12px;right:14px;width:36px;height:36px;border:0;border-radius:999px;background:var(--g-light);font-size:22px;cursor:pointer}
+  .modal-card h2{margin:0 0 8px;font-size:26px;letter-spacing:-.03em}
+  .modal-card p{margin:0;color:var(--muted)}
+  @media(max-width:960px){
+    .col{width:min(1120px,calc(100% - 40px))}
+    .nav,.footer{padding-left:20px;padding-right:20px}
+    .hero{grid-template-columns:1fr;height:auto}
+    .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
+    .hero-right::before{width:100%;height:80px;inset:auto 0 0;background:linear-gradient(to bottom, transparent, var(--ink))}
+    .hero-left{padding:28px 20px 48px}
+    .ephir,.cards3,.stream-stage,.close-row,.prog-map{grid-template-columns:1fr}
+    .ephir-window{width:min(280px,100%);margin:0 auto}
+    .stream-photo{min-height:0;height:70vw;max-height:420px}
+    .prog-map{grid-template-columns:1fr 1fr}
+    .get,.stream{padding:56px 0}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    .rise,.hero img{animation:none}
-    .wait,.in{opacity:1;transform:none;transition:none}
-    .btn{transition:none}
-    .btn:hover,.btn:active{transform:none}
+    .btn,.scroll-cue svg{transition:none;animation:none}
+    .btn:hover{transform:none}
   }
 </style>
 </head>
 <body>
-  <nav class="nav">
-    <b>Дари</b>
-    <button class="btn" type="button" data-open>Занять место</button>
-  </nav>
-
-  <header class="hero">
-    <img src="hero.jpg" alt="Дари" width="1600" height="2000">
-    <div class="hero-copy">
-      <p class="kicker rise">Анкета предзаписи</p>
-      <h1 class="rise">Союз с собой</h1>
-      <p class="offer rise">Перестаньте ждать, что вас выберут, и начните <mark>жить в удовольствие</mark>.</p>
-      <div class="hero-row rise">
-        <button class="btn" type="button" data-open>Занять место</button>
-        <p>Займите место в предзаписи и получите доступ к эфиру, где я не учу, как правильно жить, и не спасаю, а возвращаю контакт с собой, <strong>чтобы вы сами выбрали свою жизнь и выдержали этот выбор</strong>.</p>
-      </div>
-    </div>
+  <header class="nav">
+    <div class="logo">Дарья Малаховская</div>
+    <button class="nav-cta" type="button" data-open>Занять место</button>
   </header>
 
-  <section class="sheet" id="dni">
-    <h2 class="wait">Только участники анкеты предзаписи смогут попасть на <mark>закрытый эфир</mark></h2>
-    <p class="pill">на котором узнают</p>
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-inner">
+        <p class="eyebrow">Анкета предзаписи</p>
+        <h1>Союз с собой</h1>
+        <p class="hero-pain">Вы понимаете, а делаете по-старому, потому что без чужого «да» решение не принимается.</p>
+        <p class="hero-mech"><span>От «выберите меня» к «я выбираю себя»</span></p>
+        <p class="hero-how">Я не учу, как правильно жить, и не спасаю, а возвращаю контакт с собой, чтобы вы сами выбрали свою жизнь и выдержали этот выбор.</p>
+        <div class="hero-cta">
+          <button class="btn" type="button" data-open>Занять место</button>
+          <p class="hero-gift">Лучшие условия и самая низкая стоимость только у тех, кто заполнил анкету.</p>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#get">
+        <span>условия</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </div>
+    <div class="hero-right">
+      <img src="hero.jpg" alt="Дари" width="900" height="1200">
+      <div class="photo-cap">
+        <strong>Дари</strong>
+        <span>шесть лет с женщинами, которые всё тащат сами</span>
+      </div>
+    </div>
   </section>
 
-  <section class="days">
-    <article class="day wait">
-      <p class="day-top">День 1</p>
-      <div>
-        <h3>Женщина, как она есть</h3>
-        <ul>
-          <li>Почему вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
-          <li>Задумайтесь, когда вы в последний раз чувствовали себя не «сильной, нужно всё вывезти и грести», а просто счастливой.</li>
-          <li>Почему, пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
+  <section class="get" id="get">
+    <div class="col">
+      <h2 class="center">В предзаписи <em>ты получишь</em></h2>
+      <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру и бесплатному уроку</span></div>
+      <h3 class="learn-h">На закрытом эфире <em>ты узнаешь</em></h3>
+      <div class="ephir">
+        <ul class="ephir-list">
+          <li>Вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
+          <li>Пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
+          <li>Любовь, тело и деньги у вас про одно: вы себе это разрешаете или стыдитесь хотеть.</li>
         </ul>
-        <p class="itog">Вы увидите, что дело не в том, что вас не выбирают, а в том, что дома внутри нет.</p>
-      </div>
-    </article>
-    <article class="day wait">
-      <p class="day-top">День 2</p>
-      <div>
-        <h3>Деньги, как хороший секс</h3>
-        <ul>
-          <li>Почему любовь, тело и деньги у вас про одно: вы себе это разрешаете или вам стыдно хотеть.</li>
-          <li>Нельзя исправить человека, даже если любить его ещё сильнее, потому что его жизнь он проживает сам.</li>
+        <div class="ephir-window">
+          <img src="dari.jpg" alt="Дари" width="800" height="1000">
+          <div class="photo-chip">
+            <b>Три дня</b>
+            <span>Закрытый эфир</span>
+          </div>
+        </div>
+        <ul class="ephir-list">
+          <li>Нельзя исправить человека, даже если любить его ещё сильнее.</li>
           <li>Силу, которую вы тратите, чтобы его починить, пора вернуть в свою жизнь.</li>
+          <li>Жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
         </ul>
-        <p class="itog">Вы увидите, куда уходят ваше удовольствие и ваши деньги.</p>
       </div>
-    </article>
-    <article class="day wait">
-      <p class="day-top">День 3</p>
-      <div>
-        <h3>То, без чего не работает ничего</h3>
-        <ul>
-          <li>Почему один и тот же день одну поднимает, а другую укладывает: дело в том, как вы на него отвечаете.</li>
-          <li>Вы сами решаете, ваше это или не ваше и сейчас это или не сейчас, и не отдаёте это решение другому.</li>
-          <li>Почему жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
-        </ul>
-        <p class="itog">Вы один раз выбираете себя, и дальше с этого места уже можно жить.</p>
+      <div class="cards3">
+        <article class="card">
+          <h3>Место на следующий поток</h3>
+          <p>Эти условия «Союза с собой» я открываю только тем, кто заполнил анкету.</p>
+        </article>
+        <article class="card">
+          <h3>Бонусы и самая низкая стоимость</h3>
+          <p>Их забирает тот, кто в анкете. Кто придёт без неё, этих условий не получит.</p>
+        </article>
+        <article class="card">
+          <h3>Бесплатный урок сверх трёх дней</h3>
+          <p>Его я даю только тем, кто заполнил анкету.</p>
+        </article>
       </div>
-    </article>
-  </section>
-
-  <section class="path">
-    <p class="kicker">Десять недель</p>
-    <div class="path-row wait">
-      <h3><mark>Увидеть себя</mark></h3>
-      <p>Вы замечаете, где живёте не из себя.</p>
-    </div>
-    <div class="path-row wait">
-      <h3><mark>Выдержать правду</mark></h3>
-      <p>Вы не убегаете от того, что увидели, и не делаете из этого повод себя разрушить.</p>
-    </div>
-    <div class="path-row wait">
-      <h3><mark>Найти точку выбора</mark></h3>
-      <p>Вопрос уже не «как правильно», а «а как моё».</p>
-    </div>
-    <div class="path-row wait">
-      <h3><mark>Прожить выбор</mark></h3>
-      <p>Вы делаете его в жизни, а не только понимаете.</p>
-    </div>
-    <div class="path-row wait">
-      <h3><mark>Дать опыту осесть</mark></h3>
-      <p>Новый выбор остаётся с вами, и вы не срываетесь в старый сценарий.</p>
+      <div class="get-cta">
+        <button class="btn" type="button" data-open>Занять место в предзаписи</button>
+      </div>
     </div>
   </section>
 
-  <section class="forwhom">
-    <p class="wait">Вы понимаете, а делаете по-старому, потому что без чужого «да» решение не принимается.</p>
-    <p class="wait">Имена в отношениях меняются, а история остаётся той же, и после своего «нет» вы ещё три дня оправдываетесь.</p>
-    <p class="wait">Вы устали себя чинить.</p>
-  </section>
-
-  <section class="weeks">
-    <figure>
-      <img src="dari.jpg" alt="Дари" width="900" height="1100">
-    </figure>
-    <div class="weeks-copy">
-      <p class="kicker">Союз с собой</p>
-      <h2>Десять недель со мной</h2>
-      <p class="solid">Союз с собой — это решение больше себя не покидать.</p>
-      <p>Я не читаю лекции. На этих неделях мы смотрим ваши реакции, то, что вы несёте от родителей, и то, как вы себя показываете, когда боитесь остаться без чужого «да».</p>
-      <p>Что бы ни было снаружи, внутри у меня есть я. От «выберите меня» к «я выбираю себя».</p>
-      <p>Шесть лет работаю с женщинами, которые всё тащат сами. Я не учу, как правильно жить, и не спасаю, а возвращаю контакт с собой, чтобы вы сами выбрали свою жизнь и выдержали этот выбор.</p>
+  <section class="stream" id="course">
+    <div class="col">
+      <p class="eyebrow">Следующий поток</p>
+      <div class="stream-stage">
+        <figure class="stream-photo">
+          <img src="hero.jpg" alt="Дари" width="800" height="1000">
+          <figcaption class="photo-chip">
+            <b>10 недель</b>
+            <span>со мной</span>
+          </figcaption>
+        </figure>
+        <div>
+          <h2>Союз с собой — это десять недель со мной</h2>
+          <p class="lead">Союз с собой — это решение больше себя не покидать. Я не читаю лекции. На этих неделях мы смотрим ваши реакции, то, что вы несёте от родителей, и то, как вы себя показываете, когда боитесь остаться без чужого «да».</p>
+          <div class="why">
+            <p class="k">Проблема была не в мужчинах</p>
+            <p>Можно годами думать, что вас не любят, а дело не в нём: вы не разрешаете себе большего и называете это любовью.</p>
+          </div>
+        </div>
+      </div>
+      <ol class="prog-map">
+        <li><b>Увидеть себя</b><span>Вы замечаете, где живёте не из себя.</span></li>
+        <li><b>Выдержать правду</b><span>Вы не убегаете от того, что увидели.</span></li>
+        <li><b>Найти точку выбора</b><span>Не «как правильно», а «а как моё».</span></li>
+        <li><b>Прожить выбор</b><span>Вы делаете его в жизни, а не только понимаете.</span></li>
+        <li><b>Дать опыту осесть</b><span>Новый выбор остаётся, и вы не срываетесь в старый.</span></li>
+      </ol>
+      <div class="close-row">
+        <p class="close-left">Вас не должен никто выбирать, кроме вас самих.</p>
+        <div class="close-right">
+          <p>Я не учу, как правильно жить, а показываю, где вы ждёте, что вас выберут, вместо того чтобы выбрать себя. Один раз выберете себя, и дальше я вас не остановлю.</p>
+          <button class="btn" type="button" data-open>Заполнить анкету</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="gifts">
-    <article><p>Первой узнаете условия следующего потока «Союза с собой» и успеете занять в нём место.</p></article>
-    <article><p>Заберёте дополнительные бонусы и самую низкую стоимость, которой не будет у тех, кто придёт без анкеты.</p></article>
-    <article><p class="hot">Получите бесплатный урок сверх трёх дней. Его я даю только тем, кто заполнил анкету.</p></article>
-  </section>
-
-  <section class="close">
-    <div>
-      <p class="kicker">Проблема была не в мужчинах</p>
-      <h2>Вас не должен никто выбирать, кроме вас самих.</h2>
-      <p class="note">Можно годами думать, что вас не любят, а дело не в нём: вы не разрешаете себе большего и называете это любовью. Один раз выберете себя, и дальше я вас не остановлю.</p>
-    </div>
-    <button class="btn" type="button" data-open>Занять место</button>
-  </section>
-
-  <footer>
-    <p>Дарья Малаховская · Союз с собой</p>
-    <p>Это работа с собой, и я не лечу и не обещаю, что у каждой выйдет одно и то же.</p>
+  <footer class="footer">
+    <div class="logo">Дарья Малаховская · Союз с собой</div>
+    <p>Это работа с собой, и я не лечу и не обещаю, что у каждой выйдет одно и то же. Что бы ни было снаружи, внутри у меня есть я.</p>
   </footer>
 
   <div class="modal" id="anketa" hidden>
-    <div class="dim" data-close></div>
+    <div class="modal-backdrop" data-close></div>
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anketa-title">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
       <h2 id="anketa-title">Занять место в анкете</h2>
@@ -264,22 +253,6 @@
     document.querySelectorAll("[data-open]").forEach(function(el){ el.addEventListener("click", openModal); });
     document.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeModal); });
     document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
-    var nav = document.querySelector(".nav");
-    function onScroll(){ nav.classList.toggle("solid", window.scrollY > 48); }
-    onScroll();
-    window.addEventListener("scroll", onScroll, {passive:true});
-    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window){
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(!e.isIntersecting) return;
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        });
-      }, {threshold:0.18});
-      document.querySelectorAll(".wait").forEach(function(el){ io.observe(el); });
-    } else {
-      document.querySelectorAll(".wait").forEach(function(el){ el.classList.add("in"); });
-    }
   </script>
 </body>
 </html>
