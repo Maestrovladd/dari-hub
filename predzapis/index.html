@@ -60,12 +60,17 @@
   .center-wrap{display:flex;justify-content:center;margin:0 0 40px}
   .get-pill{display:inline-flex;align-items:center;min-height:48px;padding:10px 28px;background:var(--g);color:#fff;border-radius:999px;font-size:16px;font-weight:600}
   .learn-h{margin:0 0 24px;text-align:center;font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:-.03em;color:#fff}
-  .agenda{display:flex;flex-direction:column;margin:8px 0 40px}
-  .agenda article{display:grid;grid-template-columns:148px minmax(0,1fr);gap:28px;padding:28px 0;border-top:1px solid rgba(255,255,255,.16)}
-  .agenda .when{margin:4px 0 0;font-family:"Schibsted Grotesk",sans-serif;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#C9A6E8}
-  .agenda h3{margin:0 0 12px;font-size:clamp(26px,2.4vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
-  .agenda li{margin:0 0 8px;font-size:17px;line-height:1.45;color:rgba(255,255,255,.78)}
-  .agenda .itog{margin:14px 0 0;font-size:18px;font-weight:700;line-height:1.4;color:#fff}
+  .agenda{display:flex;flex-direction:column;gap:16px;margin:8px 0 40px}
+  .agenda article{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(180px,.7fr);gap:20px;align-items:center;padding:26px 26px 26px 28px;background:#141414;border-radius:18px}
+  .agenda .when{margin:0 0 10px;font-family:"Schibsted Grotesk",sans-serif;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#C9A6E8}
+  .agenda h3{margin:0 0 14px;font-size:clamp(24px,2.2vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
+  .agenda ul{margin:0;padding-left:1.15em;list-style:disc}
+  .agenda li{margin:0 0 8px;font-size:16px;line-height:1.45;color:rgba(255,255,255,.82)}
+  .agenda .itog{display:block;width:fit-content;max-width:100%;margin:16px 0 0;padding:14px 16px;background:#C9A6E8;color:#1A1024;font-size:16px;font-weight:700;line-height:1.35}
+  .agenda .itog b{display:block;margin-bottom:4px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .agenda figure{margin:0;min-height:220px;border-radius:12px;overflow:hidden}
+  .agenda img{width:100%;height:100%;min-height:220px;object-fit:cover}
+  .agenda img.low{object-position:center 70%}
   .ephir-list li{position:relative;margin-bottom:18px;padding-left:18px;font-size:16px;font-weight:600;line-height:1.45}
   .ephir-list li:last-child{margin-bottom:0}
   .ephir-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--g)}
@@ -123,7 +128,8 @@
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
     .ephir,.cards3,.stream-stage,.close-row{grid-template-columns:1fr}
-    .agenda article{grid-template-columns:1fr;gap:8px}
+    .agenda article{grid-template-columns:1fr}
+    .agenda figure{min-height:180px;order:-1}
     .ephir-window{width:min(280px,100%);margin:0 auto}
     .stream-photo{min-height:0;height:70vw;max-height:420px}
     .prog-map{grid-template-columns:1fr}
@@ -177,40 +183,43 @@
       <h3 class="learn-h">На закрытом эфире <em>ты узнаешь</em></h3>
       <div class="agenda">
         <article>
-          <p class="when">День 1</p>
           <div>
+            <p class="when">День 1</p>
             <h3>Женщина, как она есть</h3>
             <ul>
               <li>Почему вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
               <li>Задумайтесь, когда вы в последний раз чувствовали себя не «сильной, нужно всё вывезти и грести», а просто счастливой.</li>
               <li>Почему, пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
             </ul>
-            <p class="itog">Вы увидите, что дело не в том, что вас не выбирают, а в том, что дома внутри нет.</p>
+            <p class="itog"><b>Итог дня</b>Вы увидите, что дело не в том, что вас не выбирают, а в том, что дома внутри нет.</p>
           </div>
+          <figure><img src="hero.jpg" alt="" width="640" height="480"></figure>
         </article>
         <article>
-          <p class="when">День 2</p>
           <div>
+            <p class="when">День 2</p>
             <h3>Деньги, как хороший секс</h3>
             <ul>
               <li>Почему любовь, тело и деньги у вас про одно: вы себе это разрешаете или вам стыдно хотеть.</li>
               <li>Нельзя исправить человека, даже если любить его ещё сильнее, потому что его жизнь он проживает сам.</li>
               <li>Силу, которую вы тратите, чтобы его починить, пора вернуть в свою жизнь.</li>
             </ul>
-            <p class="itog">Вы увидите, куда уходят ваше удовольствие и ваши деньги.</p>
+            <p class="itog"><b>Итог дня</b>Вы увидите, куда уходят ваше удовольствие и ваши деньги.</p>
           </div>
+          <figure><img src="dari.jpg" alt="" width="640" height="480"></figure>
         </article>
         <article>
-          <p class="when">День 3</p>
           <div>
+            <p class="when">День 3</p>
             <h3>То, без чего не работает ничего</h3>
             <ul>
               <li>Почему один и тот же день одну поднимает, а другую укладывает: дело в том, как вы на него отвечаете.</li>
               <li>Вы сами решаете, ваше это или не ваше и сейчас это или не сейчас, и не отдаёте это решение другому.</li>
               <li>Почему жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
             </ul>
-            <p class="itog">Вы один раз выбираете себя, и дальше с этого места уже можно жить.</p>
+            <p class="itog"><b>Итог дня</b>Вы один раз выбираете себя, и дальше с этого места уже можно жить.</p>
           </div>
+          <figure><img src="hero.jpg" alt="" width="640" height="480" style="object-position:center 70%"></figure>
         </article>
       </div>
       <div class="cards3">
