@@ -80,10 +80,20 @@
   .photo-chip{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;padding:12px 14px;border-radius:16px;background:var(--paper);box-shadow:var(--shadow)}
   .photo-chip b{display:block;font-size:14px;font-weight:800}
   .photo-chip span{font-size:12px;color:var(--muted)}
-  .cards3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-  .card{padding:28px 26px 32px;background:#141414;border:1px solid rgba(255,255,255,.1);border-radius:var(--r);color:#fff}
-  .card h3{margin:0 0 10px;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.3;color:#fff}
-  .card p{margin:0;font-size:14px;color:rgba(255,255,255,.62);line-height:1.5}
+  .bonuses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .bonus{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;min-height:100%;padding:28px 22px 26px;background:var(--paper);border-radius:22px;color:var(--ink)}
+  .bonus::before{content:"";position:absolute;top:-36px;right:-36px;width:108px;height:108px;border-radius:50%;border:1px solid rgba(62,36,104,.14);pointer-events:none}
+  .bonus-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:118px;height:118px;margin:4px 0 22px;border-radius:50%;border:1px solid #E4D7F2;background:#fff;text-align:center}
+  .bonus-mark b{font-family:"Schibsted Grotesk",sans-serif;font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:.9;color:#3E2468}
+  .bonus-mark span{display:block;margin-top:4px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6570}
+  .bonus-mark.word b{font-size:22px;letter-spacing:-.03em}
+  .bonus h3{margin:0 0 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#1A1A1A}
+  .bonus p{margin:0;font-size:14px;line-height:1.45;color:#6B6570}
+  .bonus.vip{background:var(--g);color:#fff}
+  .bonus.vip::before{border-color:rgba(255,255,255,.22)}
+  .bonus.vip .bonus-mark{background:transparent;border-color:rgba(255,255,255,.45)}
+  .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
+  .bonus.vip p{color:rgba(255,255,255,.86)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
   .stream h2{color:#fff;line-height:1.18}
@@ -127,7 +137,8 @@
     .hero-right::before{width:100%;height:80px;inset:auto 0 0;background:linear-gradient(to bottom, transparent, var(--ink))}
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
-    .ephir,.cards3,.stream-stage,.close-row{grid-template-columns:1fr}
+    .ephir,.stream-stage,.close-row{grid-template-columns:1fr}
+    .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
     .ephir-window{width:min(280px,100%);margin:0 auto}
@@ -137,6 +148,9 @@
     .prog-map li{padding:0 0 22px 28px}
     .prog-map li::before{top:4px}
     .get,.stream{padding:56px 0}
+  }
+  @media(max-width:640px){
+    .bonuses{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -179,7 +193,7 @@
   <section class="get" id="get">
     <div class="col">
       <h2 class="center">В предзаписи <em>ты получишь</em></h2>
-      <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру и бесплатному уроку</span></div>
+      <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру</span></div>
       <h3 class="learn-h">На закрытом эфире <em>ты узнаешь</em></h3>
       <div class="agenda">
         <article>
@@ -222,18 +236,26 @@
           <figure><img class="low" src="hero.jpg" alt="" width="640" height="480"></figure>
         </article>
       </div>
-      <div class="cards3">
-        <article class="card">
-          <h3>Место на следующий поток</h3>
-          <p>Первой узнаете условия следующего потока «Союза с собой» и успеете занять в нём место.</p>
+      <div class="bonuses">
+        <article class="bonus">
+          <div class="bonus-mark word"><b>книга</b></div>
+          <h3>Книга</h3>
+          <p>Её получают те, кто занял место в предзаписи.</p>
         </article>
-        <article class="card">
-          <h3>Бонусы и самая низкая стоимость</h3>
-          <p>Заберёте дополнительные бонусы и самую низкую стоимость, которой не будет у тех, кто придёт без анкеты.</p>
+        <article class="bonus">
+          <div class="bonus-mark"><b>+1</b></div>
+          <h3>Воркшоп с Дари</h3>
+          <p>Дополнительная групповая встреча со мной, сверх трёх дней.</p>
         </article>
-        <article class="card">
-          <h3>Бесплатный урок сверх трёх дней</h3>
-          <p>Получите бесплатный урок сверх трёх дней. Его я даю только тем, кто заполнил анкету.</p>
+        <article class="bonus">
+          <div class="bonus-mark"><b>10</b><span>тыс. ₽</span></div>
+          <h3>Экономия</h3>
+          <p>До 10 000 рублей. Такой цены не будет у тех, кто придёт без анкеты.</p>
+        </article>
+        <article class="bonus vip">
+          <div class="bonus-mark"><b>150</b><span>мест</span></div>
+          <h3>Место в VIP</h3>
+          <p>Можно выкупить одно из 150 мест в группе, где я участвую лично.</p>
         </article>
       </div>
       <div class="get-cta">
