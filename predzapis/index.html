@@ -92,6 +92,8 @@
   .plaque p{margin:0;font-size:16px;line-height:1.45;color:rgba(255,255,255,.78)}
   .plaque p + p{margin-top:14px}
   .plaque .k{margin:0 0 10px;font-size:15px;font-weight:800;color:#C9A6E8}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chips span{display:inline-flex;align-items:center;min-height:38px;padding:6px 14px;border:1px solid rgba(255,255,255,.7);border-radius:999px;color:#fff;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap}
   .why{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.03)}
   .why .k{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#C9A6E8}
   .why p{margin:0;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.25}
@@ -231,7 +233,11 @@
       <div class="stream-stage">
         <article class="plaque">
           <h2>Союз с собой — это десять недель со мной</h2>
-          <p>Это для вас, если вы всё тащите сами, ждёте, что вас выберут, и давно не чувствовали себя просто счастливой.</p>
+          <div class="chips">
+            <span>всё тащите сами</span>
+            <span>ждёте, что вас выберут</span>
+            <span>давно не чувствуете себя счастливой</span>
+          </div>
           <p>Я не читаю лекции. На этих неделях мы смотрим ваши реакции, то, что вы несёте от родителей, и то, как вы себя показываете, когда боитесь остаться без чужого «да».</p>
         </article>
         <figure class="stream-photo">
