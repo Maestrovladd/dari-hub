@@ -101,11 +101,10 @@
   .theme{background:#111;color:#fff;padding:72px 0 64px;border-bottom:1px solid rgba(201,166,232,.22)}
   .theme h2{margin:0 0 12px;font-size:clamp(36px,4vw,56px);line-height:1.02}
   .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
-  .theme-door{margin:0;max-width:36em;font-size:16px;line-height:1.45;color:rgba(255,255,255,.62)}
-  .theme-map{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:34px 0 0;padding:26px 0 0;list-style:none}
-  .theme-map::before{content:"";position:absolute;top:6px;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,#C9A6E8 10%,#C9A6E8 90%,transparent)}
-  .theme-map li{position:relative;min-height:100%;padding:22px 18px 20px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08)}
-  .theme-map li::before{content:"";position:absolute;top:-26px;left:18px;width:13px;height:13px;border-radius:50%;background:#111;border:2px solid #C9A6E8;box-shadow:0 0 0 5px #111}
+  .theme-door{margin:0;max-width:36em;font-size:18px;line-height:1.45;color:rgba(255,255,255,.78)}
+  .theme-note + .theme-door{margin-top:14px;font-size:16px;color:rgba(255,255,255,.62)}
+  .theme-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 0;padding:0;list-style:none}
+  .theme-map li{min-height:100%;padding:22px 18px 20px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08)}
   .theme-map b{display:block;margin:0 0 10px;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(18px,1.45vw,22px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
   .theme-map span{display:block;font-size:15px;line-height:1.45;color:rgba(255,255,255,.72)}
   .theme-note{max-width:none;margin:16px 0 0;padding:18px 22px;border-radius:18px;background:linear-gradient(90deg,rgba(107,63,160,.38),rgba(255,255,255,.03) 72%);border:1px solid rgba(201,166,232,.28);font-size:16px;line-height:1.45;color:#fff}
@@ -168,9 +167,7 @@
     .hero-cta{flex-wrap:wrap}
     .ephir,.stream-stage,.close-row,.libido-card,.libido-more{grid-template-columns:1fr}
     .close-photo{height:72vw;max-height:420px;min-height:0}
-    .theme-map{grid-template-columns:1fr 1fr;padding-top:0}
-    .theme-map::before{display:none}
-    .theme-map li::before{display:none}
+    .theme-map{grid-template-columns:1fr 1fr}
     .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
@@ -222,7 +219,7 @@
     <div class="col">
       <p class="eyebrow">Тема этого потока</p>
       <h2>Либидо <em>жизни</em></h2>
-      <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
+      <p class="theme-door">Здесь четыре места, в которых вы можете узнать свой обычный день.</p>
       <ol class="theme-map">
         <li><b>Ничего не чувствую</b><span>Вы всё делаете и всем соответствуете, а чего хотите именно вы, слышите всё хуже.</span></li>
         <li><b>Хотите и не делаете</b><span>Вы хотите и не делаете, потому что своё желание стыдно и страшно показать.</span></li>
@@ -230,6 +227,7 @@
         <li><b>Отдых не возвращает</b><span>Вы отдыхаете и не восстанавливаетесь, потому что этот отдых только глушит день.</span></li>
       </ol>
       <p class="theme-note">Это не курс про секс и не обещание, что теперь будет легко. Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
+      <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
     </div>
   </section>
 
