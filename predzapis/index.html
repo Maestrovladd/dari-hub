@@ -97,15 +97,17 @@
   .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
   .bonus.vip p{color:rgba(255,255,255,.86)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
-  .theme{background:#111;color:#fff;padding:72px 0;border-bottom:1px solid rgba(201,166,232,.22)}
-  .theme-row{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end}
-  .theme h2{margin:0 0 16px;font-size:clamp(36px,4vw,56px);line-height:1.02}
+  .theme{background:#111;color:#fff;padding:72px 0 64px;border-bottom:1px solid rgba(201,166,232,.22)}
+  .theme h2{margin:0 0 12px;font-size:clamp(36px,4vw,56px);line-height:1.02}
   .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
-  .theme p{margin:0;max-width:34em;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
-  .theme-hits{display:flex;flex-direction:column;gap:14px;margin:0 0 18px}
-  .theme-hits p{max-width:36em;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:#fff}
-  .theme-door{max-width:34em;font-size:16px;line-height:1.45;color:rgba(255,255,255,.62)}
-  .theme-note{margin:0;padding:22px 24px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08);font-size:16px;line-height:1.5;color:#fff}
+  .theme-door{margin:0;max-width:36em;font-size:16px;line-height:1.45;color:rgba(255,255,255,.62)}
+  .theme-map{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:34px 0 0;padding:26px 0 0;list-style:none}
+  .theme-map::before{content:"";position:absolute;top:6px;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,#C9A6E8 10%,#C9A6E8 90%,transparent)}
+  .theme-map li{position:relative;min-height:100%;padding:22px 18px 20px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08)}
+  .theme-map li::before{content:"";position:absolute;top:-26px;left:18px;width:13px;height:13px;border-radius:50%;background:#111;border:2px solid #C9A6E8;box-shadow:0 0 0 5px #111}
+  .theme-map b{display:block;margin:0 0 10px;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(18px,1.45vw,22px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
+  .theme-map span{display:block;font-size:15px;line-height:1.45;color:rgba(255,255,255,.72)}
+  .theme-note{max-width:none;margin:16px 0 0;padding:18px 22px;border-radius:18px;background:linear-gradient(90deg,rgba(107,63,160,.38),rgba(255,255,255,.03) 72%);border:1px solid rgba(201,166,232,.28);font-size:16px;line-height:1.45;color:#fff}
   .bridge{max-width:40em;margin:64px 0 22px}
   .bridge h2{margin:0 0 12px;font-size:clamp(28px,3vw,40px)}
   .bridge p{margin:0;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
@@ -160,7 +162,10 @@
     .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
-    .ephir,.stream-stage,.close-row,.libido-card,.theme-row,.libido-more{grid-template-columns:1fr}
+    .ephir,.stream-stage,.close-row,.libido-card,.libido-more{grid-template-columns:1fr}
+    .theme-map{grid-template-columns:1fr 1fr;padding-top:0}
+    .theme-map::before{display:none}
+    .theme-map li::before{display:none}
     .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
@@ -173,7 +178,7 @@
     .get,.stream{padding:56px 0}
   }
   @media(max-width:640px){
-    .bonuses{grid-template-columns:1fr}
+    .bonuses,.theme-map{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -209,18 +214,16 @@
   </section>
 
   <section class="theme" id="theme">
-    <div class="col theme-row">
-      <div>
-        <p class="eyebrow">Тема этого потока</p>
-        <h2>Либидо <em>жизни</em></h2>
-        <div class="theme-hits">
-          <p>Вы всё делаете и всем соответствуете, а чего хотите именно вы, слышите всё хуже.</p>
-          <p>Вы хотите и не делаете, потому что своё желание стыдно и страшно показать.</p>
-          <p>Любимое дело вы отдаёте бесплатно или изматываетесь на нём, пока доказываете, что имеете на него право.</p>
-          <p>Вы отдыхаете и не восстанавливаетесь, потому что этот отдых только глушит день.</p>
-        </div>
-        <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
-      </div>
+    <div class="col">
+      <p class="eyebrow">Тема этого потока</p>
+      <h2>Либидо <em>жизни</em></h2>
+      <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
+      <ol class="theme-map">
+        <li><b>Ничего не чувствую</b><span>Вы всё делаете и всем соответствуете, а чего хотите именно вы, слышите всё хуже.</span></li>
+        <li><b>Хотите и не делаете</b><span>Вы хотите и не делаете, потому что своё желание стыдно и страшно показать.</span></li>
+        <li><b>Любимое дело</b><span>Любимое дело вы отдаёте бесплатно или изматываетесь на нём, пока доказываете, что имеете на него право.</span></li>
+        <li><b>Отдых не возвращает</b><span>Вы отдыхаете и не восстанавливаетесь, потому что этот отдых только глушит день.</span></li>
+      </ol>
       <p class="theme-note">Это не курс про секс и не обещание, что теперь будет легко. Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
     </div>
   </section>
