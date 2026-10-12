@@ -62,8 +62,8 @@
   .center{text-align:center}
   .center-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 36px}
   .get-pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;background:var(--g);color:#fff;border-radius:999px;font-size:15px;font-weight:600;line-height:1.3;text-align:center}
-  .learn-h{max-width:min(34em,100%);margin:8px auto 24px;text-align:center;text-wrap:balance;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#fff}
-  .agenda{display:flex;flex-direction:column;gap:16px;margin:56px 0 40px}
+  .learn-h{max-width:min(34em,100%);margin:48px auto 22px;text-align:center;text-wrap:balance;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#fff}
+  .agenda{display:flex;flex-direction:column;gap:16px;margin:0 0 40px}
   .agenda article{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(180px,.7fr);gap:20px;align-items:center;padding:26px 26px 26px 28px;background:#141414;border-radius:18px}
   .agenda .when{margin:0 0 10px;font-family:"Schibsted Grotesk",sans-serif;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#C9A6E8}
   .agenda h3{margin:0 0 14px;font-size:clamp(24px,2.2vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
@@ -105,9 +105,15 @@
   .theme h2{margin:0 0 22px;font-size:clamp(44px,5vw,72px);line-height:1.02}
   .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
   .theme-note{max-width:34em;margin:0;padding:22px 28px;text-align:center;text-wrap:balance;border-radius:22px;background:linear-gradient(160deg,rgba(107,63,160,.42),rgba(255,255,255,.04) 72%);border:1px solid rgba(201,166,232,.28);font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:#fff}
-  .bridge{max-width:40em;margin:64px 0 22px}
+  .bridge{max-width:38em;margin:64px auto 8px;text-align:center}
   .bridge h2{margin:0 0 12px;font-size:clamp(28px,3vw,40px)}
-  .bridge p{margin:0;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .bridge p{margin:0 auto;max-width:36em;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .season{margin-top:56px;text-align:center}
+  .season .eyebrow{justify-content:center}
+  .season .eyebrow::after{content:"";width:24px;height:1px;background:#C9A6E8}
+  .season h2{margin:0 0 18px;font-size:clamp(40px,4.4vw,64px);line-height:1.02}
+  .season .theme-note{margin-bottom:8px}
+  .season .prog-map{margin-top:36px;text-align:left}
   .libido-more{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
   .libido-more p{margin:0;padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);font-size:15px;line-height:1.45;color:rgba(255,255,255,.78)}
   .libido-more b{color:#fff}
@@ -119,6 +125,8 @@
   .libido-steps span{display:block;font-size:16px;line-height:1.4;color:rgba(255,255,255,.86)}
   .libido-card{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin:0;padding:32px;border-radius:28px;background:#141414;border:1px solid rgba(255,255,255,.08)}
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
+  .stream .eyebrow{justify-content:center}
+  .stream .theme-line{text-align:center}
   .stream h2{color:#fff;line-height:1.18}
   .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
   .stream-stage{display:grid;grid-template-columns:1.05fr .82fr 1.05fr;gap:14px;align-items:stretch;margin-bottom:48px}
@@ -130,6 +138,7 @@
   .plaque p + p{margin-top:14px}
   .plaque .k{margin:0 0 10px;font-size:15px;font-weight:800;color:#C9A6E8}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .plaque .chips + p{margin-top:16px}
   .chips span{display:inline-flex;align-items:center;min-height:38px;padding:6px 14px;border:1px solid rgba(255,255,255,.7);border-radius:999px;color:#fff;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap}
   .why{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.03)}
   .why .k{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#C9A6E8}
@@ -259,6 +268,7 @@
           <p>Можно выкупить одно из 30 мест в группе, где я участвую лично.</p>
         </article>
       </div>
+      <h3 class="learn-h">Программа трёхдневных эфиров</h3>
       <div class="agenda">
         <article>
           <div>
@@ -304,24 +314,20 @@
         <button class="btn" type="button" data-open>Занять место в предзаписи</button>
       </div>
       <div class="bridge">
-        <h2>Увидеть ещё не значит <em>жить иначе</em></h2>
-        <p>Три дня показывают, где вы перестали себя слышать. Десять недель «Союза с собой» нужны, чтобы замечать это в обычный день, выбирать своё и не покидать себя после выбора.</p>
+        <h2>Зачем после трёх дней ещё десять недель</h2>
+        <p>За три дня вы увидите, где перестали чувствовать жизнь, узнаете своё желание и сделаете один выбор. Десять недель нужны, чтобы этот выбор не остался на эфире, а стал вашим обычным днём.</p>
       </div>
-      <div class="libido-card">
-        <div>
-          <p class="eyebrow">Что с этим делать дальше</p>
-          <h2>Либидо <em>жизни</em></h2>
-          <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег. Желание здесь не приказ всё бросить. Его можно услышать и решить, что с ним делать.</p>
-        </div>
-        <ol class="libido-steps">
-          <li><b>Почувствовать</b><span>Где жизнь идёт на автомате и куда утекает живость.</span></li>
-          <li><b>Захотеть</b><span>Где ваше «хочу», а где долг и желание, чтобы вас выбрали.</span></li>
-          <li><b>Довести</b><span>Как желание получает форму, адресата и цену.</span></li>
+      <div class="season">
+        <p class="eyebrow">Из чего состоит этот сезон</p>
+        <h2>Либидо <em>жизни</em></h2>
+        <p class="theme-note">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег.</p>
+        <ol class="prog-map">
+          <li><b>Почувствовать</b><span>Вы замечаете, что сейчас с телом и с силами.</span></li>
+          <li><b>Захотеть</b><span>Вы отличаете своё желание от того, чего ждут другие.</span></li>
+          <li><b>Выбрать</b><span>В точке решения вы остаётесь с собой.</span></li>
+          <li><b>Воплотить</b><span>Желание становится делом, разговором, границей или ценой.</span></li>
+          <li><b>Получить</b><span>Удовольствие вы принимаете без вины, а деньги как обмен за дело, не как оценку себя.</span></li>
         </ol>
-      </div>
-      <div class="libido-more">
-        <p><b>Удовольствие.</b> Это не жизнь без отказов. Можно выбрать трудное, если оно ваше, и остановиться до того, как вы себя измотаете.</p>
-        <p><b>Деньги.</b> Они не доказывают, что вы достаточно хорошая. Это обмен за то, что вы создали, а не оценка вашей личности.</p>
       </div>
     </div>
   </section>
@@ -333,21 +339,19 @@
       <div class="stream-stage">
         <article class="plaque">
           <h2>Союз с собой — это десять недель со мной</h2>
-          <p>Это для вас, если вы всё делаете и почти ничего не чувствуете, хотите и не делаете, а любимое дело так и не получает формы.</p>
           <div class="chips">
             <span>всё делаете и не чувствуете</span>
             <span>хотите и не делаете</span>
             <span>дело не получает формы</span>
           </div>
-          <p>Я не читаю лекции. На этих неделях вы замечаете, где тело говорит «тесно», отличаете своё желание от долга и доводите его до дела, цены и обычного дня.</p>
+          <p>Я не читаю лекции. На этих неделях вы замечаете тело, отличаете своё желание от долга и доводите его до дела и цены.</p>
         </article>
         <figure class="stream-photo">
           <img src="dari.jpg" alt="Дари" width="735" height="735">
         </figure>
         <article class="plaque">
-          <p class="k">Дело не в том, что жизни мало</p>
-          <p>Можно годами всё успевать и всё понимать, а внутри жить как на автомате. Энергия уходит не от нехватки мотивации, а от того, что день построен без согласия с собой.</p>
-          <p>Удовольствие здесь не жизнь без отказов. Это когда можно выбрать трудное, если оно ваше, и получить своё, не отрабатывая это виной.</p>
+          <p class="k">День построен без вашего согласия</p>
+          <p>Можно всё успевать и всё понимать, а себя почти не чувствовать. Силы уходят от этого, а не от того, что мало мотивации.</p>
         </article>
       </div>
       <ol class="prog-map">
