@@ -96,13 +96,24 @@
   .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
   .bonus.vip p{color:rgba(255,255,255,.86)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
-  .libido-card{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin:64px 0 0;padding:32px;border-radius:28px;background:#141414;border:1px solid rgba(255,255,255,.08)}
+  .theme{background:#111;color:#fff;padding:72px 0;border-bottom:1px solid rgba(201,166,232,.22)}
+  .theme-row{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end}
+  .theme h2{margin:0 0 16px;font-size:clamp(36px,4vw,56px);line-height:1.02}
+  .theme p{margin:0;max-width:34em;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .theme-note{margin:0;padding:22px 24px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08);font-size:16px;line-height:1.5;color:#fff}
+  .bridge{max-width:40em;margin:64px 0 22px}
+  .bridge h2{margin:0 0 12px;font-size:clamp(28px,3vw,40px)}
+  .bridge p{margin:0;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .libido-more{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .libido-more p{margin:0;padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);font-size:15px;line-height:1.45;color:rgba(255,255,255,.78)}
+  .libido-more b{color:#fff}
   .libido-card h2{margin:0 0 14px;font-size:clamp(32px,3.2vw,48px);line-height:1.05}
   .libido-card .lead{margin:0;max-width:28em;font-size:17px;line-height:1.5;color:rgba(255,255,255,.78)}
   .libido-steps{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
   .libido-steps li{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
   .libido-steps b{display:block;margin-bottom:6px;font-family:"Schibsted Grotesk",sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#C9A6E8}
   .libido-steps span{display:block;font-size:16px;line-height:1.4;color:rgba(255,255,255,.86)}
+  .libido-card{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin:0;padding:32px;border-radius:28px;background:#141414;border:1px solid rgba(255,255,255,.08)}
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
   .stream h2{color:#fff;line-height:1.18}
   .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
@@ -144,7 +155,7 @@
     .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
-    .ephir,.stream-stage,.close-row,.libido-card{grid-template-columns:1fr}
+    .ephir,.stream-stage,.close-row,.libido-card,.theme-row,.libido-more{grid-template-columns:1fr}
     .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
@@ -194,6 +205,17 @@
         <strong>Дари</strong>
         <span>Шесть лет я работаю с женщинами, у которых снаружи всё держится, а внутри себя они почти не чувствуют.</span>
       </div>
+    </div>
+  </section>
+
+  <section class="theme" id="theme">
+    <div class="col theme-row">
+      <div>
+        <p class="eyebrow">Тема этого потока</p>
+        <h2>Либидо <em>жизни</em></h2>
+        <p>Сезоны «Союза с собой» не повторяют друг друга. В этот раз вопрос такой: что происходит с вашей жизнью, когда вы перестаёте себя покидать. Сюда можно прийти впервые. Прошлый сезон для этого не нужен.</p>
+      </div>
+      <p class="theme-note">Это не курс про секс и не обещание, что теперь будет легко. Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
     </div>
   </section>
 
@@ -267,17 +289,25 @@
       <div class="get-cta">
         <button class="btn" type="button" data-open>Занять место в предзаписи</button>
       </div>
+      <div class="bridge">
+        <h2>Увидеть ещё не значит <em>жить иначе</em></h2>
+        <p>Три дня показывают, где вы перестали себя слышать. Десять недель «Союза с собой» нужны, чтобы замечать это в обычный день, выбирать своё и не покидать себя после выбора.</p>
+      </div>
       <div class="libido-card">
         <div>
-          <p class="eyebrow">Перед десятью неделями</p>
+          <p class="eyebrow">Что с этим делать дальше</p>
           <h2>Либидо <em>жизни</em></h2>
-          <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег. Три эфира показывают это на себе. Десять недель «Союза с собой» нужны, чтобы выбор не остался знанием.</p>
+          <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег. Желание здесь не приказ всё бросить. Его можно услышать и решить, что с ним делать.</p>
         </div>
         <ol class="libido-steps">
           <li><b>Почувствовать</b><span>Где жизнь идёт на автомате и куда утекает живость.</span></li>
           <li><b>Захотеть</b><span>Где ваше «хочу», а где долг и желание, чтобы вас выбрали.</span></li>
           <li><b>Довести</b><span>Как желание получает форму, адресата и цену.</span></li>
         </ol>
+      </div>
+      <div class="libido-more">
+        <p><b>Удовольствие.</b> Это не жизнь без отказов. Можно выбрать трудное, если оно ваше, и остановиться до того, как вы себя измотаете.</p>
+        <p><b>Деньги.</b> Они не доказывают, что вы достаточно хорошая. Это обмен за то, что вы создали, а не оценка вашей личности.</p>
       </div>
     </div>
   </section>
