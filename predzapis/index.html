@@ -48,7 +48,7 @@
   .hero-right img.tap{object-position:center 22%;background:#000}
   .photo-cap{position:absolute;left:20px;right:20px;bottom:20px;z-index:3;width:auto;padding:10px 14px;background:var(--paper);border-radius:14px;box-shadow:var(--shadow)}
   .photo-cap strong{display:block;font-size:15px;font-weight:800}
-  .photo-cap span{font-size:12px;line-height:1.35;color:var(--muted)}
+  .photo-cap span{font-size:12px;font-style:italic;line-height:1.35;color:var(--muted)}
   .scroll-cue{position:absolute;left:48px;bottom:28px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.45);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
   .scroll-cue svg{width:28px;height:28px;animation:cue 1.6s var(--ease) infinite}
   @keyframes cue{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(8px);opacity:1}}
@@ -69,8 +69,8 @@
   .agenda h3{margin:0 0 14px;font-size:clamp(24px,2.2vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
   .agenda ul{margin:0;padding-left:1.15em;list-style:disc}
   .agenda li{margin:0 0 8px;font-size:16px;line-height:1.45;color:rgba(255,255,255,.82)}
-  .agenda .itog{display:block;width:fit-content;max-width:100%;margin:16px 0 0;padding:14px 16px;background:#C9A6E8;color:#1A1024;font-size:16px;font-weight:700;line-height:1.35}
-  .agenda .itog b{display:block;margin-bottom:4px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .agenda .itog{display:block;width:fit-content;max-width:100%;margin:16px 0 0;padding:16px 18px;background:#C9A6E8;color:#1A1024;font-size:18px;font-weight:700;line-height:1.35}
+  .agenda .itog b{display:block;margin-bottom:6px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
   .agenda figure{margin:0;min-height:220px;border-radius:12px;overflow:hidden}
   .agenda img{width:100%;height:100%;min-height:220px;object-fit:cover}
   .agenda img.low{object-position:center 70%}
@@ -83,7 +83,8 @@
   .photo-chip{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;padding:12px 14px;border-radius:16px;background:var(--paper);box-shadow:var(--shadow)}
   .photo-chip b{display:block;font-size:14px;font-weight:800}
   .photo-chip span{font-size:12px;color:var(--muted)}
-  .bonuses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:860px;margin:0 auto}
+  .bonuses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1040px;margin:0 auto}
+  .bonus:nth-child(1),.bonus:nth-child(2){grid-column:span 2}
   .bonus{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;min-height:100%;padding:18px 16px 16px;background:var(--paper);border-radius:18px;color:var(--ink);text-align:center}
   .bonus::before{content:"";position:absolute;top:-28px;right:-28px;width:84px;height:84px;border-radius:50%;border:1px solid rgba(62,36,104,.14);pointer-events:none}
   .bonus-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:84px;height:84px;margin:0 auto 14px;border-radius:50%;border:1px solid #E4D7F2;background:#fff;text-align:center}
@@ -194,6 +195,7 @@
     .stair li:not(:last-child)::after{width:16px}
     .close-photo{height:72vw;max-height:420px;min-height:0}
     .bonuses{grid-template-columns:1fr 1fr}
+    .bonus:nth-child(1),.bonus:nth-child(2){grid-column:auto}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
     .ephir-window{width:min(280px,100%);margin:0 auto}
@@ -206,6 +208,7 @@
   }
   @media(max-width:640px){
     .bonuses{grid-template-columns:1fr}
+    .bonus:nth-child(1),.bonus:nth-child(2){grid-column:auto}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -234,7 +237,7 @@
     <div class="hero-right">
       <img class="tap" src="hero-tap.jpg" alt="Дари" width="1086" height="1448">
       <div class="photo-cap">
-        <strong>Дари</strong>
+        <strong>Дари Малаховская</strong>
         <span>Шесть лет я работаю с женщинами, у которых снаружи всё держится, а внутри себя они почти не чувствуют.</span>
       </div>
     </div>
@@ -245,7 +248,7 @@
       <p class="eyebrow">Тема этого потока</p>
       <h2>Либидо <em>жизни</em></h2>
       <p class="theme-plain">Это не курс про секс и не обещание, что теперь будет легко.</p>
-      <p class="theme-note">Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
+      <p class="theme-note">Либидо жизни здесь — способность чувствовать себя, понимать своё желание, выбирать жизнь в контакте и превращать любимое дело в форму, ценность и деньги.</p>
     </div>
   </section>
 
@@ -253,9 +256,9 @@
     <div class="col">
       <h2 class="center">В предзаписи <em>ты получишь</em>:</h2>
       <div class="center-wrap">
-        <span class="get-pill">бонусы</span>
-        <span class="get-pill">специальные условия</span>
-        <span class="get-pill">доступ к трёхдневным эфирам лично со мной</span>
+        <span class="get-pill">Бонусы</span>
+        <span class="get-pill">Специальные условия</span>
+        <span class="get-pill">Доступ к трёхдневным эфирам лично со мной</span>
       </div>
       <div class="bonuses">
         <article class="bonus">
@@ -302,11 +305,11 @@
             <p class="when">15 ноября</p>
             <h3>Где я перестала чувствовать жизнь</h3>
             <ul>
-              <li>Вы увидите, где день идёт сам, а вы только успеваете быть удобной, сильной и нужной.</li>
-              <li>Вы отличите усталость, заморозку и жизнь по чужому сценарию от того места, где в вас ещё есть живость.</li>
-              <li>Вы отметите, куда утекает энергия: в контроль, в заслуживание и в ожидание, что вас выберут.</li>
+              <li>Вы увидите, что делаете на автомате и чем за это платите.</li>
+              <li>Вы отличите усталость, заморозку, скуку и жизнь по чужому сценарию от места, где в вас ещё есть живость.</li>
+              <li>Три раза за день вы остановитесь и запишете: что чувствую, чего хочу, что выбираю.</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы увидите, что желания нет не потому, что жизни нет, а потому что вы давно перестали слышать то, что мешало быть удобной.</p>
+            <p class="itog"><b>Итог дня</b>Желания нет не от пустой жизни. Вы давно не слышали сигналы, которые мешали быть удобной и сильной.</p>
           </div>
           <figure><img src="day-15.jpg" alt="Дари" width="1276" height="1400"></figure>
         </article>
@@ -315,11 +318,11 @@
             <p class="when">16 ноября</p>
             <h3>Чего я хочу на самом деле</h3>
             <ul>
-              <li>Вы отличите своё желание от долга, от компенсации и от желания, чтобы вас одобрили.</li>
-              <li>Вы посмотрите, чего стоит ваше «да» и чего стоит ваше «нет»: телу, отношениям и обычной жизни.</li>
+              <li>Вы отличите своё желание от долга, от фантазии и от желания, чтобы вас выбрали.</li>
+              <li>Вы посмотрите, чего стоит ваше «да» и чего стоит ваше «нет»: телу, отношениям и жизни.</li>
               <li>Вы скажете одно честное: да, нет, позже или «мне нужно другое условие».</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы услышите, чего хотите именно вы, и не примете это за приказ немедленно всё бросить.</p>
+            <p class="itog"><b>Итог дня</b>Своё желание можно услышать. Это не приказ всё бросить. С ним ещё можно решить, как поступить.</p>
           </div>
           <figure><img src="day-16.jpg" alt="Дари" width="1194" height="1400"></figure>
         </article>
@@ -328,11 +331,11 @@
             <p class="when">17 ноября</p>
             <h3>Как желание становится жизнью и деньгами</h3>
             <ul>
-              <li>Вы увидите, как живое дело получает форму, адресата и цену, без насилия над собой.</li>
+              <li>Живое желание получает форму, адресата, цену и действие. Без насилия над собой.</li>
               <li>Вы соберёте одно: что создадите или предложите в ближайшие семь дней.</li>
-              <li>Вы поймёте, почему одного увиденного мало и зачем дальше десять недель, в которых этот выбор проживается.</li>
+              <li>Вы увидите, почему одного увиденного мало и зачем дальше десять недель, где этот выбор проживается.</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы выйдете не с новым знанием о себе, а с одним шагом, который уже можно сделать.</p>
+            <p class="itog"><b>Итог дня</b>Вы уйдёте с одним шагом на семь дней. Ещё одного знания о себе для этого мало.</p>
           </div>
           <figure><img src="day-17.jpg" alt="Дари" width="1306" height="1400"></figure>
         </article>
