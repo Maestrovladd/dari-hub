@@ -95,10 +95,13 @@
   .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
   .bonus.vip p{color:rgba(255,255,255,.86)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
-  .libido{background:#111;color:#fff;padding:72px 0 80px;border-top:1px solid rgba(201,166,232,.28)}
-  .libido h2{max-width:12em}
-  .libido .lead{max-width:38em;margin:0;font-size:18px;line-height:1.55;color:rgba(255,255,255,.78)}
-  .libido .lead + .lead{margin-top:16px}
+  .libido-card{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin:0 0 36px;padding:32px;border-radius:28px;background:#141414;border:1px solid rgba(255,255,255,.08)}
+  .libido-card h2{margin:0 0 14px;font-size:clamp(32px,3.2vw,48px);line-height:1.05}
+  .libido-card .lead{margin:0;max-width:28em;font-size:17px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .libido-steps{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+  .libido-steps li{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+  .libido-steps b{display:block;margin-bottom:6px;font-family:"Schibsted Grotesk",sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#C9A6E8}
+  .libido-steps span{display:block;font-size:16px;line-height:1.4;color:rgba(255,255,255,.86)}
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
   .stream h2{color:#fff;line-height:1.18}
   .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
@@ -140,7 +143,7 @@
     .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
-    .ephir,.stream-stage,.close-row{grid-template-columns:1fr}
+    .ephir,.stream-stage,.close-row,.libido-card{grid-template-columns:1fr}
     .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
@@ -150,7 +153,7 @@
     .prog-map::before{display:none}
     .prog-map li{padding:0 0 22px 28px}
     .prog-map li::before{top:4px}
-    .get,.stream,.libido{padding:56px 0}
+    .get,.stream{padding:56px 0}
   }
   @media(max-width:640px){
     .bonuses{grid-template-columns:1fr}
@@ -197,6 +200,18 @@
     <div class="col">
       <h2 class="center">В предзаписи <em>ты получишь</em></h2>
       <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру</span></div>
+      <div class="libido-card">
+        <div>
+          <p class="eyebrow">Перед тремя днями</p>
+          <h2>Либидо <em>жизни</em></h2>
+          <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег. Три эфира показывают это на себе. Десять недель «Союза с собой» нужны, чтобы выбор не остался знанием.</p>
+        </div>
+        <ol class="libido-steps">
+          <li><b>Почувствовать</b><span>Где жизнь идёт на автомате и куда утекает живость.</span></li>
+          <li><b>Захотеть</b><span>Где ваше «хочу», а где долг и желание, чтобы вас выбрали.</span></li>
+          <li><b>Довести</b><span>Как желание получает форму, адресата и цену.</span></li>
+        </ol>
+      </div>
       <h3 class="learn-h">На закрытом эфире <em>ты узнаешь</em></h3>
       <div class="agenda">
         <article>
@@ -267,37 +282,27 @@
     </div>
   </section>
 
-  <section class="libido" id="libido">
-    <div class="col">
-      <p class="eyebrow">Три дня</p>
-      <h2>Либидо <em>жизни</em></h2>
-      <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег.</p>
-      <p class="lead">15, 16 и 17 ноября я проведу три закрытых эфира. Они ценны сами по себе. И они показывают, зачем потом нужен «Союз с собой»: увидеть мало, дальше это надо прожить. Десять недель со мной для того, чтобы вы не покинули себя после выбора.</p>
-      <p class="lead">С этих трёх дней вы унесёте не конспект. Вы увидите, где жизнь идёт на автомате. Отличите своё «хочу» от долга и от желания, чтобы вас выбрали. И соберёте один шаг, в котором желание уже имеет форму.</p>
-    </div>
-  </section>
-
   <section class="stream" id="course">
     <div class="col">
       <p class="eyebrow">Следующий поток</p>
       <div class="stream-stage">
         <article class="plaque">
           <h2>Союз с собой — это десять недель со мной</h2>
-          <p>Это для вас, если вы всё тащите сами, ждёте, что вас выберут, и давно не чувствовали себя просто счастливой.</p>
+          <p>Это для вас, если вы всё делаете и почти ничего не чувствуете, хотите и не делаете, а любимое дело так и не получает формы.</p>
           <div class="chips">
-            <span>всё тащите сами</span>
-            <span>ждёте, что вас выберут</span>
-            <span>давно не чувствуете себя счастливой</span>
+            <span>всё делаете и не чувствуете</span>
+            <span>хотите и не делаете</span>
+            <span>дело не получает формы</span>
           </div>
-          <p>Я не читаю лекции, а на этих неделях мы смотрим, где вы перестали себя чувствовать, чего вы хотите и как это желание становится вашей жизнью, а не чужим «да».</p>
+          <p>Я не читаю лекции. На этих неделях вы замечаете, где тело говорит «тесно», отличаете своё желание от долга и доводите его до дела, цены и обычного дня.</p>
         </article>
         <figure class="stream-photo">
           <img src="dari.jpg" alt="Дари" width="735" height="735">
         </figure>
         <article class="plaque">
-          <p class="k">Проблема была не в мужчинах</p>
-          <p>Можно годами думать, что вас не любят, а дело не в нём: вы не разрешаете себе большего и называете это любовью.</p>
-          <p>Страх теряет власть, когда вы говорите прямо, без «но» и без «а вдруг», и можете сказать вслух, что вам страшно, вам больно, вы не знаете, что делать, вам нужна помощь и вы устали.</p>
+          <p class="k">Дело не в том, что жизни мало</p>
+          <p>Можно годами всё успевать и всё понимать, а внутри жить как на автомате. Энергия уходит не от нехватки мотивации, а от того, что день построен без согласия с собой.</p>
+          <p>Удовольствие здесь не жизнь без отказов. Это когда можно выбрать трудное, если оно ваше, и получить своё, не отрабатывая это виной.</p>
         </article>
       </div>
       <ol class="prog-map">
