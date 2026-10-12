@@ -100,8 +100,11 @@
   .theme{background:#111;color:#fff;padding:72px 0;border-bottom:1px solid rgba(201,166,232,.22)}
   .theme-row{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end}
   .theme h2{margin:0 0 16px;font-size:clamp(36px,4vw,56px);line-height:1.02}
-  .theme .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
+  .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
   .theme p{margin:0;max-width:34em;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
+  .theme-hits{display:flex;flex-direction:column;gap:14px;margin:0 0 18px}
+  .theme-hits p{max-width:36em;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:#fff}
+  .theme-door{max-width:34em;font-size:16px;line-height:1.45;color:rgba(255,255,255,.62)}
   .theme-note{margin:0;padding:22px 24px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08);font-size:16px;line-height:1.5;color:#fff}
   .bridge{max-width:40em;margin:64px 0 22px}
   .bridge h2{margin:0 0 12px;font-size:clamp(28px,3vw,40px)}
@@ -210,8 +213,13 @@
       <div>
         <p class="eyebrow">Тема этого потока</p>
         <h2>Либидо <em>жизни</em></h2>
-        <p class="theme-line">Сезоны «Союза с собой» не повторяют друг друга.</p>
-        <p>В этот раз вопрос такой: что происходит с вашей жизнью, когда вы перестаёте себя покидать. Сюда можно прийти впервые. Прошлый сезон для этого не нужен.</p>
+        <div class="theme-hits">
+          <p>Вы всё делаете и всем соответствуете, а чего хотите именно вы, слышите всё хуже.</p>
+          <p>Вы хотите и не делаете, потому что своё желание стыдно и страшно показать.</p>
+          <p>Любимое дело вы отдаёте бесплатно или изматываетесь на нём, пока доказываете, что имеете на него право.</p>
+          <p>Вы отдыхаете и не восстанавливаетесь, потому что этот отдых только глушит день.</p>
+        </div>
+        <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
       </div>
       <p class="theme-note">Это не курс про секс и не обещание, что теперь будет легко. Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
     </div>
@@ -313,6 +321,7 @@
   <section class="stream" id="course">
     <div class="col">
       <p class="eyebrow">Следующий поток</p>
+      <p class="theme-line">Сезоны «Союза с собой» не повторяют друг друга.</p>
       <div class="stream-stage">
         <article class="plaque">
           <h2>Союз с собой — это десять недель со мной</h2>
