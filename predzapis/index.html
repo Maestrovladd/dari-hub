@@ -90,13 +90,21 @@
   .bonus-mark b{font-family:"Schibsted Grotesk",sans-serif;font-size:30px;font-weight:800;letter-spacing:-.05em;line-height:.9;color:#3E2468}
   .bonus-mark span{display:block;margin-top:2px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6570}
   .bonus-mark.word b{font-size:16px;letter-spacing:-.03em}
-  .bonus h3{margin:0 0 6px;font-size:16px;font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#1A1A1A}
-  .bonus p{margin:0;font-size:13px;line-height:1.4;color:#6B6570}
+  .marks{display:flex;justify-content:center;gap:8px;margin:0 auto 14px}
+  .marks .bonus-mark{width:62px;height:62px;margin:0}
+  .marks .bonus-mark b{font-size:20px}
+  .bonus-mark.stack{width:96px;height:96px}
+  .bonus-mark.stack b{font-size:13px;font-weight:800;letter-spacing:-.03em;line-height:1.15;text-transform:none}
+  .hit{display:inline-flex;align-items:center;min-height:22px;margin:0 0 10px;padding:0 8px;border-radius:999px;background:var(--g);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .bonus-tag{margin:0 0 4px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#6B3FA0}
+  .bonus h3{margin:0 0 6px;font-size:16px;font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#1A1A1A;text-wrap:balance}
+  .bonus p{margin:0;font-size:13px;line-height:1.4;color:#6B6570;text-wrap:pretty}
   .bonus.vip{background:var(--g);color:#fff}
   .bonus.vip::before{border-color:rgba(255,255,255,.22)}
   .bonus.vip .bonus-mark{background:transparent;border-color:rgba(255,255,255,.45)}
-  .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
+  .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3,.bonus.vip .bonus-tag{color:#fff}
   .bonus.vip p{color:rgba(255,255,255,.86)}
+  .bonus.vip .hit{background:#fff;color:var(--g)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
   .theme{background:#111;color:#fff;padding:56px 0;border-bottom:1px solid rgba(201,166,232,.22);text-align:center}
   .theme .col{display:flex;flex-direction:column;align-items:center}
@@ -250,19 +258,23 @@
       </div>
       <div class="bonuses">
         <article class="bonus">
-          <div class="bonus-mark"><b>3</b><span>дня</span></div>
-          <h3>Трёхдневный эфир</h3>
-          <p>15, 16 и 17 ноября, три эфира лично со мной.</p>
+          <div class="marks">
+            <div class="bonus-mark"><b>15</b></div>
+            <div class="bonus-mark"><b>16</b></div>
+            <div class="bonus-mark"><b>17</b></div>
+          </div>
+          <h3>Трёхдневные эфиры</h3>
+          <p>Три эфира лично со мной.</p>
         </article>
         <article class="bonus">
-          <div class="bonus-mark word"><b>урок</b></div>
-          <h3>Бонусный урок</h3>
-          <p>Видео о том, как перестать искать у других разрешение на свою жизнь. Вместо «как правильно» там вопрос «а как моё?».</p>
+          <div class="bonus-mark word stack"><b>Бонусный</b><b>урок</b></div>
+          <h3>Как перестать искать у других разрешение на свою жизнь</h3>
         </article>
         <article class="bonus">
-          <div class="bonus-mark word"><b>книга</b></div>
-          <h3>Книга</h3>
-          <p>Автобиография с элементами моего метода. Скорее всего, она будет называться «Жить жизнь». Три цикла: лабиринт, согласие, счастье.</p>
+          <span class="hit">хит</span>
+          <div class="bonus-mark word"><b>Книга</b></div>
+          <h3>Автобиография с элементами моего метода</h3>
+          <p>Скорее всего, она будет называться «Жить жизнь». Три цикла: лабиринт, согласие, счастье.</p>
         </article>
         <article class="bonus">
           <div class="bonus-mark"><b>+1</b></div>
@@ -271,13 +283,14 @@
         </article>
         <article class="bonus">
           <div class="bonus-mark"><b>10</b><span>тыс. ₽</span></div>
-          <h3>Экономия</h3>
-          <p>До 10 000 рублей. Такой цены не будет у тех, кто придёт без анкеты.</p>
+          <p class="bonus-tag">Специальные бонусы</p>
+          <h3>До 10 000 рублей</h3>
+          <p>Только участники анкеты предзаписи гарантированно получат скидки и самые низкие цены.</p>
         </article>
         <article class="bonus vip">
           <div class="bonus-mark"><b>30</b><span>мест</span></div>
-          <h3>Место в VIP</h3>
-          <p>Можно выкупить одно из 30 мест в группе, где я участвую лично.</p>
+          <h3>Место в VIP-группе</h3>
+          <p>Успейте занять одно из 30 мест в группе лично с Дари.</p>
         </article>
       </div>
       <div class="get-cta">
