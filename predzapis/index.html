@@ -143,8 +143,11 @@
   .prog-map li::before{content:"";position:absolute;top:0;left:0;width:13px;height:13px;border-radius:50%;background:var(--ink);border:2px solid #C9A6E8;box-shadow:0 0 0 5px var(--ink)}
   .prog-map b{display:block;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(18px,1.5vw,22px);font-weight:700;letter-spacing:-.03em;line-height:1.2}
   .prog-map span{display:block;margin-top:10px;font-size:14px;line-height:1.45;color:rgba(255,255,255,.62)}
-  .close-row{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;margin-top:56px;padding:40px 36px;border:0;border-radius:28px;background:linear-gradient(160deg,rgba(107,63,160,.42),rgba(255,255,255,.04) 58%)}
-  .close-left{margin:0;font-size:clamp(32px,3.4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.05}
+  .close-row{display:grid;grid-template-columns:minmax(180px,.7fr) 1.15fr .95fr;gap:28px;align-items:stretch;margin-top:56px;padding:28px;border:0;border-radius:28px;background:linear-gradient(160deg,rgba(107,63,160,.42),rgba(255,255,255,.04) 58%)}
+  .close-photo{margin:0;border-radius:20px;overflow:hidden;min-height:240px}
+  .close-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+  .close-left{align-self:center;margin:0;font-size:clamp(32px,3.4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.05}
+  .close-right{align-self:center}
   .close-right p{margin:0 0 22px;font-size:17px;line-height:1.5;color:rgba(255,255,255,.78)}
   .footer{padding:36px 48px;background:#111;color:rgba(255,255,255,.45);font-size:13px}
   .footer .logo{color:rgba(255,255,255,.85)}
@@ -163,6 +166,7 @@
     .hero-left{padding:28px 20px 48px}
     .hero-cta{flex-wrap:wrap}
     .ephir,.stream-stage,.close-row,.libido-card,.libido-more{grid-template-columns:1fr}
+    .close-photo{height:72vw;max-height:420px;min-height:0}
     .theme-map{grid-template-columns:1fr 1fr;padding-top:0}
     .theme-map::before{display:none}
     .theme-map li::before{display:none}
@@ -364,6 +368,7 @@
         <li><b>Дать опыту осесть</b><span>Новый выбор остаётся, и вы не срываетесь в старый.</span></li>
       </ol>
       <div class="close-row">
+        <figure class="close-photo"><img src="close.jpg" alt="Дари" width="1226" height="1400"></figure>
         <p class="close-left">Вас не должен никто выбирать, кроме вас самих.</p>
         <div class="close-right">
           <p>Я не учу, как правильно жить, а показываю, где вы ждёте, что вас выберут, вместо того чтобы выбрать себя. Один раз выберете себя, и дальше я вас не остановлю. Если внутри звучит «хочу по-другому», заполните анкету и займите место. Я жду.</p>
