@@ -44,6 +44,7 @@
   .hero-right{position:relative;overflow:hidden;background:var(--g-dark)}
   .hero-right::before{content:"";position:absolute;inset:0 auto 0 0;width:140px;background:linear-gradient(to right, var(--ink), transparent);z-index:2}
   .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .hero-right img.tap{object-position:center 22%;background:#000}
   .photo-cap{position:absolute;left:20px;right:20px;bottom:20px;z-index:3;width:auto;padding:10px 14px;background:var(--paper);border-radius:14px;box-shadow:var(--shadow)}
   .photo-cap strong{display:block;font-size:15px;font-weight:800}
   .photo-cap span{font-size:12px;line-height:1.35;color:var(--muted)}
@@ -95,6 +96,10 @@
   .bonus.vip .bonus-mark b,.bonus.vip .bonus-mark span,.bonus.vip h3{color:#fff}
   .bonus.vip p{color:rgba(255,255,255,.86)}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
+  .libido{background:#111;color:#fff;padding:72px 0 80px;border-top:1px solid rgba(201,166,232,.28)}
+  .libido h2{max-width:12em}
+  .libido .lead{max-width:38em;margin:0;font-size:18px;line-height:1.55;color:rgba(255,255,255,.78)}
+  .libido .lead + .lead{margin-top:16px}
   .stream{background:var(--ink);color:#fff;padding:88px 0 80px}
   .stream h2{color:#fff;line-height:1.18}
   .stream .lead{margin:0 0 28px;color:rgba(255,255,255,.62);font-size:18px;line-height:1.55}
@@ -147,7 +152,7 @@
     .prog-map::before{display:none}
     .prog-map li{padding:0 0 22px 28px}
     .prog-map li::before{top:4px}
-    .get,.stream{padding:56px 0}
+    .get,.stream,.libido{padding:56px 0}
   }
   @media(max-width:640px){
     .bonuses{grid-template-columns:1fr}
@@ -182,7 +187,7 @@
       </a>
     </div>
     <div class="hero-right">
-      <img src="hero.jpg" alt="Дари" width="900" height="1200">
+      <img class="tap" src="hero-tap.jpg" alt="Дари" width="1086" height="1448">
       <div class="photo-cap">
         <strong>Дари</strong>
         <span>Шесть лет я работаю с женщинами, у которых снаружи всё держится, а внутри себя они почти не чувствуют.</span>
@@ -198,40 +203,40 @@
       <div class="agenda">
         <article>
           <div>
-            <p class="when">День 1</p>
-            <h3>Женщина, как она есть</h3>
+            <p class="when">15 ноября</p>
+            <h3>Где я перестала чувствовать жизнь</h3>
             <ul>
-              <li>Почему вас научили, что сила — это всё тащить самой и ни разу не остановиться.</li>
-              <li>Задумайтесь, когда вы в последний раз чувствовали себя не «сильной, нужно всё вывезти и грести», а просто счастливой.</li>
-              <li>Почему, пока дома внутри нет, вы ждёте, что вас выберут, и называете это любовью.</li>
+              <li>Вы увидите, где день идёт сам, а вы только успеваете быть удобной, сильной и нужной.</li>
+              <li>Вы отличите усталость, заморозку и жизнь по чужому сценарию от того места, где в вас ещё есть живость.</li>
+              <li>Вы отметите, куда утекает энергия: в контроль, в заслуживание и в ожидание, что вас выберут.</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы увидите, что дело не в том, что вас не выбирают, а в том, что дома внутри нет.</p>
+            <p class="itog"><b>Итог дня</b>Вы увидите, что желания нет не потому, что жизни нет, а потому что вы давно перестали слышать то, что мешало быть удобной.</p>
           </div>
           <figure><img src="hero.jpg" alt="" width="640" height="480"></figure>
         </article>
         <article>
           <div>
-            <p class="when">День 2</p>
-            <h3>Деньги, как хороший секс</h3>
+            <p class="when">16 ноября</p>
+            <h3>Чего я хочу на самом деле</h3>
             <ul>
-              <li>Почему любовь, тело и деньги у вас про одно: вы себе это разрешаете или вам стыдно хотеть.</li>
-              <li>Нельзя исправить человека, даже если любить его ещё сильнее, потому что его жизнь он проживает сам.</li>
-              <li>Силу, которую вы тратите, чтобы его починить, пора вернуть в свою жизнь.</li>
+              <li>Вы отличите своё желание от долга, от компенсации и от желания, чтобы вас одобрили.</li>
+              <li>Вы посмотрите, чего стоит ваше «да» и чего стоит ваше «нет»: телу, отношениям и обычной жизни.</li>
+              <li>Вы скажете одно честное: да, нет, позже или «мне нужно другое условие».</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы увидите, куда уходят ваше удовольствие и ваши деньги.</p>
+            <p class="itog"><b>Итог дня</b>Вы услышите, чего хотите именно вы, и не примете это за приказ немедленно всё бросить.</p>
           </div>
           <figure><img src="dari.jpg" alt="" width="640" height="480"></figure>
         </article>
         <article>
           <div>
-            <p class="when">День 3</p>
-            <h3>То, без чего не работает ничего</h3>
+            <p class="when">17 ноября</p>
+            <h3>Как желание становится жизнью и деньгами</h3>
             <ul>
-              <li>Почему один и тот же день одну поднимает, а другую укладывает: дело в том, как вы на него отвечаете.</li>
-              <li>Вы сами решаете, ваше это или не ваше и сейчас это или не сейчас, и не отдаёте это решение другому.</li>
-              <li>Почему жить в удовольствие начинается с вашего выбора, а не с чужого «да».</li>
+              <li>Вы увидите, как живое дело получает форму, адресата и цену, без насилия над собой.</li>
+              <li>Вы соберёте одно: что создадите или предложите в ближайшие семь дней.</li>
+              <li>Вы поймёте, почему одного увиденного мало и зачем дальше десять недель, в которых этот выбор проживается.</li>
             </ul>
-            <p class="itog"><b>Итог дня</b>Вы один раз выбираете себя, и дальше с этого места уже можно жить.</p>
+            <p class="itog"><b>Итог дня</b>Вы выйдете не с новым знанием о себе, а с одним шагом, который уже можно сделать.</p>
           </div>
           <figure><img class="low" src="hero.jpg" alt="" width="640" height="480"></figure>
         </article>
@@ -264,6 +269,16 @@
     </div>
   </section>
 
+  <section class="libido" id="libido">
+    <div class="col">
+      <p class="eyebrow">Три дня</p>
+      <h2>Либидо <em>жизни</em></h2>
+      <p class="lead">Либидо жизни здесь не про секс. Это когда вы снова чувствуете, чего хотите, выдерживаете это желание и доводите его до выбора, дела и денег.</p>
+      <p class="lead">15, 16 и 17 ноября я проведу три закрытых эфира. Они ценны сами по себе. И они показывают, зачем потом нужен «Союз с собой»: увидеть мало, дальше это надо прожить. Десять недель со мной для того, чтобы вы не покинули себя после выбора.</p>
+      <p class="lead">С этих трёх дней вы унесёте не конспект. Вы увидите, где жизнь идёт на автомате. Отличите своё «хочу» от долга и от желания, чтобы вас выбрали. И соберёте один шаг, в котором желание уже имеет форму.</p>
+    </div>
+  </section>
+
   <section class="stream" id="course">
     <div class="col">
       <p class="eyebrow">Следующий поток</p>
@@ -276,7 +291,7 @@
             <span>ждёте, что вас выберут</span>
             <span>давно не чувствуете себя счастливой</span>
           </div>
-          <p>Я не читаю лекции, а на этих неделях мы смотрим, как вы реагируете, что вы несёте от родителей и как вы себя показываете, когда боитесь остаться без чужого «да».</p>
+          <p>Я не читаю лекции, а на этих неделях мы смотрим, где вы перестали себя чувствовать, чего вы хотите и как это желание становится вашей жизнью, а не чужим «да».</p>
         </article>
         <figure class="stream-photo">
           <img src="dari.jpg" alt="Дари" width="735" height="735">
