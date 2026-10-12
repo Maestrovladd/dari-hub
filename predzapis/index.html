@@ -23,11 +23,8 @@
   button{font-family:inherit}
   ul{margin:0;padding:0;list-style:none}
   .col{width:min(1120px,calc(100% - 96px));margin:0 auto}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:var(--ink)}
   .logo{font-size:15px;font-weight:600;color:#fff}
-  .nav-cta{height:44px;padding:0 20px;border:0;border-radius:999px;background:var(--g);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
-  .nav-cta:hover{background:var(--g-dark)}
-  .hero{display:grid;grid-template-columns:1.25fr .85fr;height:calc(100svh - 84px);min-height:640px;background:var(--ink)}
+  .hero{display:grid;grid-template-columns:1.25fr .85fr;height:100svh;min-height:640px;background:var(--ink)}
   .hero-left{display:flex;flex-direction:column;justify-content:center;padding:48px 56px 72px 48px;position:relative}
   .hero-inner{width:min(680px,100%)}
   .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9A6E8}
@@ -155,7 +152,7 @@
   .modal-card p{margin:0;color:var(--muted)}
   @media(max-width:960px){
     .col{width:min(1120px,calc(100% - 40px))}
-    .nav,.footer{padding-left:20px;padding-right:20px}
+    .footer{padding-left:20px;padding-right:20px}
     .hero{grid-template-columns:1fr;height:auto}
     .hero-right{order:-1;height:70vw;min-height:280px;max-height:420px}
     .hero-left{padding:28px 20px 48px}
@@ -183,11 +180,6 @@
 </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="logo">Дарья Малаховская</div>
-    <button class="nav-cta" type="button" data-open>Занять место</button>
-  </header>
-
   <section class="hero">
     <div class="hero-left">
       <div class="hero-inner">
