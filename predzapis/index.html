@@ -60,8 +60,8 @@
   .get h2.center{max-width:18em;margin-left:auto;margin-right:auto}
   h2 em,.learn-h em{font-style:normal;color:#C9A6E8}
   .center{text-align:center}
-  .center-wrap{display:flex;justify-content:center;margin:0 0 40px}
-  .get-pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:min(34em,100%);padding:10px 22px;background:var(--g);color:#fff;border-radius:999px;font-size:15px;font-weight:600;line-height:1.35;text-align:center}
+  .center-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 36px}
+  .get-pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;background:var(--g);color:#fff;border-radius:999px;font-size:15px;font-weight:600;line-height:1.3;text-align:center}
   .learn-h{max-width:min(34em,100%);margin:8px auto 24px;text-align:center;text-wrap:balance;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#fff}
   .agenda{display:flex;flex-direction:column;gap:16px;margin:56px 0 40px}
   .agenda article{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(180px,.7fr);gap:20px;align-items:center;padding:26px 26px 26px 28px;background:#141414;border-radius:18px}
@@ -84,9 +84,9 @@
   .photo-chip b{display:block;font-size:14px;font-weight:800}
   .photo-chip span{font-size:12px;color:var(--muted)}
   .bonuses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-  .bonus{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;min-height:100%;padding:28px 22px 26px;background:var(--paper);border-radius:22px;color:var(--ink)}
+  .bonus{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;min-height:100%;padding:28px 22px 26px;background:var(--paper);border-radius:22px;color:var(--ink);text-align:center}
   .bonus::before{content:"";position:absolute;top:-36px;right:-36px;width:108px;height:108px;border-radius:50%;border:1px solid rgba(62,36,104,.14);pointer-events:none}
-  .bonus-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:118px;height:118px;margin:4px 0 22px;border-radius:50%;border:1px solid #E4D7F2;background:#fff;text-align:center}
+  .bonus-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:118px;height:118px;margin:4px auto 22px;border-radius:50%;border:1px solid #E4D7F2;background:#fff;text-align:center}
   .bonus-mark b{font-family:"Schibsted Grotesk",sans-serif;font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:.9;color:#3E2468}
   .bonus-mark span{display:block;margin-top:4px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6570}
   .bonus-mark.word b{font-size:22px;letter-spacing:-.03em}
@@ -101,13 +101,7 @@
   .theme{background:#111;color:#fff;padding:72px 0 64px;border-bottom:1px solid rgba(201,166,232,.22)}
   .theme h2{margin:0 0 12px;font-size:clamp(36px,4vw,56px);line-height:1.02}
   .theme-line{margin:0 0 18px;max-width:none;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:#C9A6E8}
-  .theme-door{margin:0;max-width:36em;font-size:18px;line-height:1.45;color:rgba(255,255,255,.78)}
-  .theme-note + .theme-door{margin-top:14px;font-size:16px;color:rgba(255,255,255,.62)}
-  .theme-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 0;padding:0;list-style:none}
-  .theme-map li{min-height:100%;padding:22px 18px 20px;border-radius:22px;background:#141414;border:1px solid rgba(255,255,255,.08)}
-  .theme-map b{display:block;margin:0 0 10px;font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(18px,1.45vw,22px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
-  .theme-map span{display:block;font-size:15px;line-height:1.45;color:rgba(255,255,255,.72)}
-  .theme-note{max-width:none;margin:16px 0 0;padding:18px 22px;border-radius:18px;background:linear-gradient(90deg,rgba(107,63,160,.38),rgba(255,255,255,.03) 72%);border:1px solid rgba(201,166,232,.28);font-size:16px;line-height:1.45;color:#fff}
+  .theme-note{max-width:34em;margin:0;padding:0;border:0;border-radius:0;background:none;font-size:clamp(18px,1.7vw,22px);line-height:1.45;color:#fff}
   .bridge{max-width:40em;margin:64px 0 22px}
   .bridge h2{margin:0 0 12px;font-size:clamp(28px,3vw,40px)}
   .bridge p{margin:0;font-size:18px;line-height:1.5;color:rgba(255,255,255,.78)}
@@ -167,7 +161,6 @@
     .hero-cta{flex-wrap:wrap}
     .ephir,.stream-stage,.close-row,.libido-card,.libido-more{grid-template-columns:1fr}
     .close-photo{height:72vw;max-height:420px;min-height:0}
-    .theme-map{grid-template-columns:1fr 1fr}
     .bonuses{grid-template-columns:1fr 1fr}
     .agenda article{grid-template-columns:1fr}
     .agenda figure{min-height:180px;order:-1}
@@ -180,7 +173,7 @@
     .get,.stream{padding:56px 0}
   }
   @media(max-width:640px){
-    .bonuses,.theme-map{grid-template-columns:1fr}
+    .bonuses{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -219,38 +212,33 @@
     <div class="col">
       <p class="eyebrow">Тема этого потока</p>
       <h2>Либидо <em>жизни</em></h2>
-      <p class="theme-door">Здесь четыре места, в которых вы можете узнать свой обычный день.</p>
-      <ol class="theme-map">
-        <li><b>Ничего не чувствую</b><span>Вы всё делаете и всем соответствуете, а чего хотите именно вы, слышите всё хуже.</span></li>
-        <li><b>Хотите и не делаете</b><span>Вы хотите и не делаете, потому что своё желание стыдно и страшно показать.</span></li>
-        <li><b>Любимое дело</b><span>Любимое дело вы отдаёте бесплатно или изматываетесь на нём, пока доказываете, что имеете на него право.</span></li>
-        <li><b>Отдых не возвращает</b><span>Вы отдыхаете и не восстанавливаетесь, потому что этот отдых только глушит день.</span></li>
-      </ol>
       <p class="theme-note">Это не курс про секс и не обещание, что теперь будет легко. Это способность снова чувствовать, хотеть и доводить желание до дела и денег.</p>
-      <p class="theme-door">Сюда можно прийти впервые, и прошлый сезон для этого не нужен.</p>
     </div>
   </section>
 
   <section class="get" id="get">
     <div class="col">
-      <h2 class="center">В предзаписи <em>ты получишь</em></h2>
-      <div class="center-wrap"><span class="get-pill">доступ к трёхдневным эфирам и бонусному уроку лично от меня</span></div>
-      <h3 class="learn-h">В предзаписи ты получишь бонусы и специальные условия<br>и доступ к трёхдневным эфирам лично со мной</h3>
+      <h2 class="center">В предзаписи <em>ты получишь</em>:</h2>
+      <div class="center-wrap">
+        <span class="get-pill">бонусы</span>
+        <span class="get-pill">специальные условия</span>
+        <span class="get-pill">доступ к трёхдневным эфирам лично со мной</span>
+      </div>
       <div class="bonuses">
         <article class="bonus">
           <div class="bonus-mark"><b>3</b><span>дня</span></div>
           <h3>Трёхдневный эфир</h3>
-          <p>15, 16 и 17 ноября я проведу три эфира лично. Вы увидите, где перестали чувствовать жизнь, чего хотите на самом деле и как желание становится делом и деньгами.</p>
+          <p>15, 16 и 17 ноября, три эфира лично со мной.</p>
         </article>
         <article class="bonus">
           <div class="bonus-mark word"><b>урок</b></div>
           <h3>Бонусный урок</h3>
-          <p>Это видео о том, как перестать искать у других разрешение на свою жизнь. Вы узнаете себя в пяти ситуациях: отношения, деньги, работа, право говорить о себе и важное решение. Вместо «как правильно» там звучит вопрос «а как моё?».</p>
+          <p>Видео о том, как перестать искать у других разрешение на свою жизнь. Вместо «как правильно» там вопрос «а как моё?».</p>
         </article>
         <article class="bonus">
           <div class="bonus-mark word"><b>книга</b></div>
           <h3>Книга</h3>
-          <p>Её получают те, кто занял место в предзаписи. Это автобиография с элементами моего метода. Скорее всего, она будет называться «Жить жизнь». Три цикла: лабиринт, согласие, счастье.</p>
+          <p>Автобиография с элементами моего метода. Скорее всего, она будет называться «Жить жизнь». Три цикла: лабиринт, согласие, счастье.</p>
         </article>
         <article class="bonus">
           <div class="bonus-mark"><b>+1</b></div>
