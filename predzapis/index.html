@@ -195,17 +195,19 @@
     .scroll-cue{display:none}
     .hero h1{font-size:clamp(40px,11vw,56px)}
     .hero-cta{flex-direction:column;align-items:stretch;gap:16px}
-    .hero-cta .btn{width:100%;min-width:0;white-space:normal}
+    .hero-cta .btn,.get-cta .btn,.close-right .btn{width:100%;min-width:0;max-width:100%;white-space:normal}
     .hero-gift{width:100%}
-    .hero-pain b,.hero-pain span{padding-left:0}
+    .hero-pain span{padding-left:0}
+    .chips span,.get-pill,.theme-note,.photo-cap,.bonus h3,.bonus p,.agenda h3,.agenda li{overflow-wrap:break-word}
     .chips span{white-space:normal}
     .ephir,.stream-stage,.close-row,.libido-card,.libido-more,.season{grid-template-columns:1fr}
-    .stair li,.stair li:nth-child(2),.stair li:nth-child(3),.stair li:nth-child(4),.stair li:nth-child(5){margin-left:0;width:100%}
+    .stair li,.stair li:nth-child(2),.stair li:nth-child(3),.stair li:nth-child(4),.stair li:nth-child(5){margin-left:0;width:100%;padding-left:36px}
+    .stair li::before{left:12px}
     .stair li:not(:last-child)::after{display:none}
     .close-row{padding:16px;gap:16px}
     .close-photo{height:72vw;max-height:420px;min-height:0}
     .close-left{font-size:clamp(28px,8vw,36px)}
-    .bonuses{grid-template-columns:1fr 1fr}
+    .bonuses{grid-template-columns:1fr}
     .bonus:nth-child(1),.bonus:nth-child(2){grid-column:auto}
     .agenda article{grid-template-columns:1fr}
     .agenda article{padding:20px 16px}
@@ -217,7 +219,33 @@
     .prog-map::before{display:none}
     .prog-map li{padding:0 0 22px 28px}
     .prog-map li::before{top:4px}
-    .get,.stream{padding:56px 0}
+    .get,.stream,.theme{padding:56px 0}
+    .hero-left,.hero-inner{align-items:center;text-align:center}
+    .hero .eyebrow{justify-content:center}
+    .hero .eyebrow::after{content:"";width:32px;height:1.5px;background:#C9A6E8}
+    .hero-pain{align-items:center;text-align:center;max-width:none}
+    .hero-pain b{align-self:center;padding:8px 16px;text-align:center}
+    .hero-gift{flex-direction:column;align-items:center;text-align:center}
+    .hero-gift svg{margin-top:0}
+    .photo-cap{left:12px;right:12px;text-align:center}
+    .theme-note{padding:12px 14px}
+    .plaque{padding:22px 16px}
+    .center-wrap{flex-direction:column;align-items:stretch}
+    .get-pill{width:100%}
+    .pill-break{display:block}
+    .season{text-align:center}
+    .season .eyebrow{justify-content:center}
+    .season .eyebrow::after{content:"";width:24px;height:1px;background:#C9A6E8}
+    .season h2,.season-lead,.season-more{margin-left:auto;margin-right:auto;text-align:center;max-width:none}
+    .stair{text-align:left}
+    .plaque,.close-left,.close-right,.close-right p,.footer{text-align:center}
+    .plaque h2,.plaque .k,.plaque p{text-align:center}
+    .chips{justify-content:center}
+    .pairs .chips span,.plaque .chips span{width:100%;justify-content:center;text-align:center}
+    .agenda .when,.agenda h3,.agenda .itog{text-align:center}
+    .agenda ul{text-align:left}
+    .close-right .btn{width:100%}
+    .prog-map,.prog-map li{text-align:left}
   }
   @media(max-width:640px){
     .bonuses{grid-template-columns:1fr}
@@ -271,7 +299,7 @@
       <div class="center-wrap">
         <span class="get-pill">Бонусы</span>
         <span class="get-pill">Специальные условия</span>
-        <span class="get-pill">Доступ к трёхдневным эфирам лично со мной</span>
+        <span class="get-pill">Доступ к трёхдневным эфирам <span class="pill-break">лично со мной</span></span>
       </div>
       <div class="bonuses">
         <article class="bonus">
