@@ -178,8 +178,14 @@
   .close-left{align-self:center;margin:0;font-size:clamp(32px,3.4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.05}
   .close-right{align-self:center}
   .close-right p{margin:0 0 22px;font-size:17px;line-height:1.5;color:rgba(255,255,255,.78)}
-  .footer{padding:36px 48px;background:#111;color:rgba(255,255,255,.45);font-size:13px}
-  .footer .logo{color:rgba(255,255,255,.85)}
+  .footer{padding:40px 48px calc(28px + env(safe-area-inset-bottom,0px));background:#fff;color:#6B6570;font-size:14px}
+  .f-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;width:min(1120px,100%);margin:0 auto}
+  .f-ip{margin:0;text-align:left;font-size:14px;line-height:1.45;color:#8A8490}
+  .f-side{display:flex;flex-direction:column;align-items:flex-end;gap:12px;text-align:right}
+  .f-soc{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid #1A1A1A;border-radius:50%;color:#1A1A1A}
+  .f-doc{max-width:360px;color:#6B6570;font-size:14px;line-height:1.35;text-decoration:none}
+  .f-doc:hover{color:#1A1A1A}
+  .f-note{max-width:920px;margin:28px auto 0;text-align:center;font-size:13px;line-height:1.45;color:#8A8490}
   .modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:24px}
   .modal[hidden]{display:none}
   .modal-backdrop{position:absolute;inset:0;background:rgb(26 26 26 / .62)}
@@ -241,7 +247,10 @@
     .season .eyebrow::after{content:"";width:24px;height:1px;background:#C9A6E8}
     .season h2,.season-lead,.season-more{margin-left:auto;margin-right:auto;text-align:center;max-width:none}
     .stair{text-align:left}
-    .plaque,.close-left,.close-right,.close-right p,.footer{text-align:center}
+    .plaque,.close-left,.close-right,.close-right p{text-align:center}
+    .f-top{flex-direction:column;align-items:center;gap:22px}
+    .f-ip,.f-side,.f-doc{text-align:center}
+    .f-side{align-items:center}
     .plaque h2,.plaque .k,.plaque p{text-align:center}
     .chips{justify-content:center}
     .pairs .chips span,.plaque .chips span{width:100%;justify-content:center;text-align:center}
@@ -462,8 +471,16 @@
   </section>
 
   <footer class="footer">
-    <div class="logo">Дарья Малаховская · Союз с собой</div>
-    <p>Это работа с собой, и я не лечу и не обещаю, что у каждой выйдет одно и то же. Что бы ни было снаружи, внутри у меня есть я.</p>
+    <div class="f-top">
+      <p class="f-ip">Индивидуальный предприниматель<br>Малаховская Дарья<br>Андреевна<br>ИНН: 251119056955<br>ОГРНИП: 323253600083982</p>
+      <div class="f-side">
+        <a class="f-soc" href="https://t.me/daarisoul" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M21.2 4.3 2.9 11.2c-.9.3-.9.9-.2 1.1l4.7 1.5 1.8 5.6c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.6-2.5 5.4 4c.8.4 1.4.2 1.6-.8L22.4 5.6c.3-1.2-.4-1.8-1.2-1.3zM9.4 14.2l8.8-5.5c.4-.3.8-.1.5.2l-7.2 6.5-.3 3.1-1.8-4.3z"/></svg></a>
+        <a class="f-doc" href="https://school.dari-malakhovskaya.ru/Politika" target="_blank" rel="noopener">Политика конфиденциальности</a>
+        <a class="f-doc" href="https://school.dari-malakhovskaya.ru/soglasie-reklama" target="_blank" rel="noopener">Согласие на получение информационной<br>и рекламной рассылки</a>
+        <a class="f-doc" href="https://school.dari-malakhovskaya.ru/persdatacept" target="_blank" rel="noopener">Согласие на обработку персональных данных</a>
+      </div>
+    </div>
+    <p class="f-note">Информация носит образовательный характер и не является медицинской рекомендацией. Школа не заменяет личную психотерапию, лечение у врача и помощь кризисных служб.</p>
   </footer>
 
   <div class="modal" id="anketa" hidden>
