@@ -48,7 +48,7 @@
 const $=s=>document.getElementById(s);
 const esc=x=>String(x??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,'&quot;');
 function cm(d){let dd=d.split(".");return dd[0]+"."+dd[1]}
-function typeTitle(c){return c==="form"?"АНКЕТА":c==="lm"?"ЛИД-МАГНИТ":c==="event"?"ТРЕНИНГ":"БЕЗ ССЫЛКИ"}
+function typeTitle(c){return c==="form"?"АНКЕТА ПРЕДЗАПИСИ":c==="lm"?"ЛИД-МАГНИТ":c==="event"?"РЕГИСТРАЦИЯ НА ТРЕНИНГ":"БЕЗ ССЫЛКИ"}
 function groupDate(units){let out="",last="";for(const u of units){if(u.date!==last){out+='<div class="pdate">'+esc(u.date)+'.2026</div>';last=u.date}let k=u.kind.toLowerCase(),style=k.includes("отзыв")?"case":k.includes("голосов")?"voice":k.includes("круж")?"circle":k.includes("reels")||k.includes("видео")||k.includes("эфир")?"video":"post";out+='<div class="pentry kind-'+style+'"><b>'+esc(u.kind)+'</b><span class="what">'+esc(u.title)+'</span></div>'}return out||'<p class="thin">Самостоятельных материалов нет</p>'}
 function countKind(list,sub){return list.filter(x=>x.kind.toLowerCase().includes(sub)).length}
 function weekStart(i,day){wi=i;const w=W[i];const ds=D.filter(d=>d.week===i);selected=day||ds[0].date;
@@ -59,11 +59,18 @@ $('openGoalTitle').textContent="Задача: "+w.focus;
 $('openGoal').textContent=w.openGoal;
 $('closedGoalTitle').textContent="Задача: продукт, метод, доверие";
 $('closedGoal').textContent=w.closedGoal;
+$('mainIdea').textContent=w.main;
+$('openTheses').innerHTML=w.open.map(x=>'<li>'+esc(x)+'</li>').join('');
+$('closedTheses').innerHTML=w.closed.map(x=>'<li>'+esc(x)+'</li>').join('');
+$('openPath').textContent=w.routeOpen;$('closedPath').textContent=w.routeClosed;
+$('arcs').innerHTML=w.phases.map(x=>'<div class="arcstep"><span>'+esc(x[0])+'</span><b>'+esc(x[1])+'</b><p>'+esc(x[2])+'</p></div>').join('');
+$('editTip').innerHTML='<b>Не перегружаем:</b> '+esc(w.editor);
 const c=w.counts;
-const s=[["Telegram-посты",c.open.tg],["Reels / эфир / видео",c.open.reels+c.open.video],["Видеоотзывы",c.video],["Stories, серии",c.stories],["Закрытый TG, материалов",c.closedTotal]];
-const z=[["Анкета",c.form],["ЛМ",c.lm],["Тренинг",c.event],["Раскрытие продукта · закрытый",c.product]];
+const open=w.openPrep,closed=w.closedPrep;const voice=closed.filter(x=>x.kind.toLowerCase().includes("голосов")).length;const circle=closed.filter(x=>x.kind.toLowerCase().includes("круж")).length;const longer=open.filter(x=>/длинное видео|эфир/i.test(x.kind)).length;
+const s=[["Посты в открытом TG",c.open.tg],["Reels",c.open.reels],["Длинные видео/эфиры",longer],["Видеоотзывы",c.video],["Серии Stories",c.stories],["Материалы в закрытом TG",c.closedTotal],["Голосовые",voice],["Кружочки",circle]];
+const z=[["Анкета",c.form],["ЛМ",c.lm],["Тренинг",c.event],["Продукт в закрытом",c.product]];
 $('metrics').innerHTML=s.map(x=>'<span class="metric">'+esc(x[0])+': <b>'+x[1]+'</b></span>').join('')+z.map(x=>'<span class="metric highlight">'+esc(x[0])+': <b>'+x[1]+'</b></span>').join('');
-$('weekEnd').innerHTML='<b>Открытая аудитория:</b> '+esc(w.endOpen)+'<br><b>Закрытый Telegram:</b> '+esc(w.endClosed);
+$('weekEnd').innerHTML='<b>В открытом:</b> '+esc(w.outOpen)+'<br><br><b>В закрытом:</b> '+esc(w.outClosed);
 $('weekDates').textContent=w.dates;
 $('openProduction').innerHTML='<h3>Открытый Telegram / Reels</h3><div class="counter">'+c.openTotal+' основных материалов</div>'+groupDate(w.openPrep);
 $('closedProduction').innerHTML='<h3>Закрытый Telegram</h3><div class="counter">'+c.closedTotal+' отдельных материалов. Участницы уже заполнили анкету, здесь её не повторяем.</div>'+groupDate(w.closedPrep);
