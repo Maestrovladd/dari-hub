@@ -64,6 +64,17 @@
 .metricLane .metricItems{display:flex;flex-wrap:wrap;gap:5px}
 .metricLane p{font-size:11px;color:var(--mut);margin:9px 0 0}
 @media(max-width:750px){.metricsSeparated{grid-template-columns:1fr}}
+
+/* На планшетах и телефонах показываем обе ветки даже без публикации */
+@media(min-width:681px) and (max-width:1100px){
+ .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .colheads,.dayrow{min-width:1120px;grid-template-columns:82px 1.16fr .82fr 1.16fr 1fr}
+ .colheads>div:last-child,.dayrow>div:last-child{display:block}
+}
+@media(max-width:680px){
+ .dayrow>div:has(.empty){display:block}
+ .dayrow .empty{font-size:12px;color:#87978a}
+}
 </style></head><body><main class="page">
 <header><div class="eyebrow">Дари · производственный план · обновлён 20 октября 2026</div><div class="headrow"><div><h1>Прогрев «Союза с собой»</h1><p class="intro">Выбери неделю. Сверху сразу видно, куда ведут обе ветки, сколько материалов снять и что выходит каждый день.</p></div><div class="dateupdate">19 октября – 15 ноября</div></div></header>
 <div class="tabs" id="tabs" role="group" aria-label="Выбор недели"></div>
