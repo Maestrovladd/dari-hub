@@ -12,12 +12,32 @@
 @media(max-width:900px){.colheads,.dayrow{grid-template-columns:77px 1.1fr .88fr 1.1fr}.colheads>div:last-child,.dayrow>div:last-child{display:none}.tab{min-height:90px}}
 @media(max-width:680px){.page{padding:16px 12px 55px}.tabs{grid-template-columns:repeat(2,1fr)}.tab{min-height:72px}.lanes,.shortsummary,.prod,.detailtwo{grid-template-columns:1fr}.colheads{display:none}.dayrow{display:block;border-top:1px solid var(--line);padding:11px 13px}.dayrow>div{border:0;padding:5px 0}.dayrow .datecol{display:flex;align-items:baseline;gap:8px}.datecol .arrow{margin:0 0 0 auto}.dayrow>div:last-child{display:block}.dayrow>div:nth-child(2):before{content:"ОТКРЫТЫЙ TG / REELS";display:block;font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--g)}.dayrow>div:nth-child(3):before{content:"STORIES";display:block;font-size:10px;font-weight:800;color:var(--g);letter-spacing:.05em}.dayrow>div:nth-child(4):before{content:"ЗАКРЫТЫЙ TELEGRAM";display:block;font-size:10px;font-weight:800;color:var(--b);letter-spacing:.05em}.dayrow>div:nth-child(5):before{content:"ЗАДАЧА И ПЕРЕХОД";display:block;font-size:10px;font-weight:800;color:var(--mut);letter-spacing:.05em}.dayrow>div p{margin:5px 0}.dayrow>div .maintext{font-size:13px}.detail{padding:16px}.section{margin-top:20px}.metrics{gap:5px}.metric{font-size:11px}.dayrow>div:has(.empty){display:none}}
 @media print{body{background:#fff}.tabs,.buttonHint{display:none}.page{width:100%;padding:0}.card,.prodcard,.detail{break-inside:avoid}.tablewrap{border-radius:0}h1{font-size:29px}}
+
+.bigidea{background:#f4f7f2;border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin-bottom:12px}
+.bigidea .eyebrow{margin-bottom:6px}.bigidea p{max-width:1080px;line-height:1.65;font-size:14px}
+.deep{border-top:1px solid #cadfce;margin-top:15px;padding-top:13px}.lane.closed .deep{border-color:#e8d5c5}
+.deep>b{font-size:12px}.deep ol{margin:8px 0 0;padding-left:19px}.deep li{padding-left:2px;margin-bottom:10px;font-size:13px;line-height:1.55}
+.route{margin-top:12px;padding:11px;border-radius:10px;background:#ffffffc9;font-size:12px;line-height:1.55}.route b{color:var(--g)}.lane.closed .route b{color:var(--b)}
+.arc{background:#fff;border:1px solid var(--line);border-radius:13px;margin-top:13px;padding:16px}.arc .eyebrow{margin-bottom:10px}
+.arcsteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.arcstep{background:#fffcf0;border-left:3px solid #e5d588;border-radius:0 9px 9px 0;padding:11px 13px}
+.arcstep:nth-child(2){background:#f3f7fd;border-color:#aec4dc}.arcstep:nth-child(3){background:#f0f9f1;border-color:#a8d7b7}
+.arcstep span{display:block;font-size:11px;color:var(--mut);font-weight:750;margin-bottom:5px}
+.arcstep b{display:block;margin-bottom:5px;font-size:13px}.arcstep p{font-size:12px;line-height:1.5}
+.editor-tip{padding-top:10px;border-top:1px solid var(--line);margin-top:13px!important;font-size:12px}
+.pentry{border-left-width:4px!important;padding:6px 9px;margin:4px 0;border-radius:0 7px 7px 0;background:#f3f7fb;display:flex;flex-wrap:wrap;column-gap:8px;align-items:baseline}
+.pentry b{font-size:11px}.pentry .what{font-size:13px}
+.kind-post{border-color:#adcae7!important}.kind-voice{border-color:#e2b8c2!important;background:#fdf3f5}
+.kind-circle{border-color:#ecd98d!important;background:#fffbec}.kind-case{border-color:#abd5b5!important;background:#f1faf2}
+.kind-video{border-color:#c5b7df!important;background:#f5f2fb}
+@media(max-width:950px){.arcsteps{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.arcsteps{grid-template-columns:1fr}.arc{padding:12px}.bigidea{padding:12px}.deep li{font-size:13px}}
 </style></head><body><main class="page">
 <header><div class="eyebrow">Дари · производственный план · обновлён 20 октября 2026</div><div class="headrow"><div><h1>Прогрев «Союза с собой»</h1><p class="intro">Выбери неделю. Сверху сразу видно, куда ведут обе ветки, сколько материалов снять и что выходит каждый день.</p></div><div class="dateupdate">19 октября – 15 ноября</div></div></header>
 <div class="tabs" id="tabs" role="group" aria-label="Выбор недели"></div>
 <section id="week" class="card"><div class="eyebrow" id="weekRange"></div><h2 id="weekTopic"></h2>
-<div class="lanes"><div class="lane"><div class="lanehead">ОТКРЫТЫЙ КОНТЕНТ · Telegram / Reels / Stories</div><div class="lanelead" id="openGoalTitle"></div><p id="openGoal"></p></div><div class="lane closed"><div class="lanehead">ЗАКРЫТЫЙ TELEGRAM · только после анкеты</div><div class="lanelead" id="closedGoalTitle"></div><p id="closedGoal"></p></div></div>
-<div class="metrics" id="metrics"></div><div class="shortsummary"><div class="summain"><strong>Что аудитория поймёт к концу недели</strong><p id="weekEnd"></p></div><div class="sumsecondary"><strong>Главное событие и даты</strong><p id="weekDates"></p></div></div></section>
+<div class="bigidea"><div class="eyebrow">Главная мысль недели</div><p id="mainIdea"></p></div><div class="lanes"><div class="lane"><div class="lanehead">ОТКРЫТЫЙ КОНТЕНТ · Telegram / Reels / Stories</div><div class="lanelead" id="openGoalTitle"></div><p id="openGoal"></p><div class="deep"><b>Что показываем в течение недели</b><ol id="openTheses"></ol></div><div class="route"><b>Последовательность:</b> <span id="openPath"></span></div></div><div class="lane closed"><div class="lanehead">ЗАКРЫТЫЙ TELEGRAM · только после анкеты</div><div class="lanelead" id="closedGoalTitle"></div><p id="closedGoal"></p><div class="deep"><b>Что раскрываем участницам</b><ol id="closedTheses"></ol></div><div class="route"><b>Последовательность:</b> <span id="closedPath"></span></div></div></div><div class="arc"><div class="eyebrow">Развитие темы по дням</div><div class="arcsteps" id="arcs"></div></div>
+<div class="metrics" id="metrics"></div><div class="shortsummary"><div class="summain"><strong>Что аудитория поймёт к концу недели</strong><p id="weekEnd"></p></div><div class="sumsecondary"><strong>Главное событие и даты</strong><p id="weekDates"></p><p id="editTip" class="editor-tip"></p></div></div></section>
 <section class="section" id="toMake"><h2>Что подготовить на эту неделю</h2><p class="thin">Конкретные единицы контента по датам. Одна дата с несколькими материалами записана один раз.</p><div class="prod"><div class="prodcard" id="openProduction"></div><div class="prodcard closed" id="closedProduction"></div></div><div class="storyline" id="storyProduction"></div></section>
 <section class="section" id="weekCalendar"><h2>Вся неделя перед глазами</h2><p class="thin">Все семь дней, сразу видно место публикации, тему, зачем она нужна и куда ведём. Нажми на день, чтобы открыть подробное ТЗ.</p>
 <div class="tablewrap"><div class="colheads"><div>Дата</div><div>Открытый TG / Reels</div><div>Stories</div><div>Закрытый Telegram</div><div>Зачем / куда ведём</div></div><div id="days"></div></div><div class="buttonHint">Нажми на строку нужного дня. Сценарии и задачи появятся ниже.</div><div id="dayDetail" class="detail" tabindex="-1"></div></section>
@@ -29,7 +49,7 @@ const $=s=>document.getElementById(s);
 const esc=x=>String(x??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,'&quot;');
 function cm(d){let dd=d.split(".");return dd[0]+"."+dd[1]}
 function typeTitle(c){return c==="form"?"АНКЕТА":c==="lm"?"ЛИД-МАГНИТ":c==="event"?"ТРЕНИНГ":"БЕЗ ССЫЛКИ"}
-function groupDate(units){let out="",last="";for(const u of units){if(u.date!==last){out+='<div class="pdate">'+esc(u.date)+'.2026</div>';last=u.date}out+='<div class="pentry"><b>'+esc(u.kind)+'</b> · '+esc(u.title)+'</div>'}return out||'<p class="thin">Самостоятельных материалов нет</p>'}
+function groupDate(units){let out="",last="";for(const u of units){if(u.date!==last){out+='<div class="pdate">'+esc(u.date)+'.2026</div>';last=u.date}let k=u.kind.toLowerCase(),style=k.includes("отзыв")?"case":k.includes("голосов")?"voice":k.includes("круж")?"circle":k.includes("reels")||k.includes("видео")||k.includes("эфир")?"video":"post";out+='<div class="pentry kind-'+style+'"><b>'+esc(u.kind)+'</b><span class="what">'+esc(u.title)+'</span></div>'}return out||'<p class="thin">Самостоятельных материалов нет</p>'}
 function countKind(list,sub){return list.filter(x=>x.kind.toLowerCase().includes(sub)).length}
 function weekStart(i,day){wi=i;const w=W[i];const ds=D.filter(d=>d.week===i);selected=day||ds[0].date;
 $('tabs').innerHTML=W.map((x,j)=>'<button class="tab" type="button" data-w="'+j+'" aria-pressed="'+(j===i)+'"><span class="tabdate">Неделя '+(j+1)+' · '+esc(x.range)+'</span><span class="tablabel">'+esc(x.tab)+'</span></button>').join('');
