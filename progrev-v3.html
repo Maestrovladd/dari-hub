@@ -133,7 +133,7 @@ const open=w.openPrep,closed=w.closedPrep;const voice=closed.filter(x=>x.kind.to
 const list=(items)=>items.map(x=>'<span class="metric">'+esc(x[0])+': <b>'+x[1]+'</b></span>').join('');
 const openStats=[["Посты в TG",c.open.tg],["Reels",c.open.reels],["Длинные видео/эфиры",longer],["Видеоотзывы",c.video],["Серии Stories",c.stories]];
 const openLinks=[["Анкета предзаписи",c.form],["Лид-магнит",c.lm],["Регистрация на тренинг",c.event]];
-const closedStats=[["Всего материалов",c.closedTotal],["Голосовые",voice],["Кружочки",circle],["О продукте",c.product]];
+const closedStats=[["Всего материалов",c.closedTotal],["Посты в TG",c.closed.tg],["Голосовые",voice],["Кружочки",circle],["О продукте",c.product]];
 $('metrics').innerHTML='<div class="metricLane"><strong>Открытый контент</strong><div class="metricItems">'+list(openStats)+openLinks.map(x=>'<span class="metric highlight">'+esc(x[0])+': <b>'+x[1]+'</b></span>').join('')+'</div></div>'+
 '<div class="metricLane closed"><strong>Закрытый Telegram</strong><div class="metricItems">'+list(closedStats)+'</div><p>Участницы уже заполнили анкету. Здесь раскрываем программу, метод и условия участия.</p></div>';
 $('weekDates').textContent=w.dates;
